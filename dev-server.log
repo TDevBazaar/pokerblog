@@ -1,0 +1,581 @@
+
+> poker-advisor-blog@0.1.0 dev
+> next dev
+
+   ▲ Next.js 15.5.19
+   - Local:        http://localhost:3000
+   - Network:      http://10.29.254.180:3000
+
+ ✓ Starting...
+ ✓ Ready in 4.5s
+ ○ Compiling / ...
+ ✓ Compiled / in 8s (716 modules)
+ GET / 200 in 11231ms
+ ○ Compiling /aprende-poker ...
+ ✓ Compiled /aprende-poker in 1286ms (736 modules)
+ GET /aprende-poker 200 in 1941ms
+ GET /aprende-poker 200 in 191ms
+ ○ Compiling /manos-de-poker ...
+ ✓ Compiled /manos-de-poker in 548ms (724 modules)
+ GET /manos-de-poker 200 in 969ms
+ ○ Compiling /probabilidades ...
+ ✓ Compiled /probabilidades in 608ms (726 modules)
+ GET /probabilidades 200 in 852ms
+ ○ Compiling /estrategia ...
+ ✓ Compiled /estrategia in 577ms (728 modules)
+ GET /estrategia 200 in 834ms
+ GET /aprende-poker 200 in 126ms
+ GET / 200 in 308ms
+ GET /aprende-poker 200 in 962ms
+ GET / 200 in 279ms
+ GET / 200 in 381ms
+ ✓ Compiled in 1548ms (742 modules)
+ GET / 200 in 569ms
+ GET / 200 in 1402ms
+ GET / 200 in 1087ms
+ ✓ Compiled in 1511ms (742 modules)
+ GET / 200 in 632ms
+ ⨯ Error: Could not find the module "D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '2933376271'
+}
+ ⨯ Error: Could not find the module "D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '1816299307'
+}
+ ⨯ Error: Could not find the module "D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '1816299307'
+}
+ ⨯ Error: Could not find the module "D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '1816299307'
+}
+ ⨯ Error: Could not find the module "D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '2933376271'
+}
+ ⨯ Error: Could not find the module "D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '2933376271'
+}
+ ⨯ [TypeError: __webpack_modules__[moduleId] is not a function] {
+  digest: '2148704065'
+}
+ ⨯ Error: Could not find the module "D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '2933376271'
+}
+[TypeError: __webpack_modules__[moduleId] is not a function]
+ ⨯ [TypeError: __webpack_modules__[moduleId] is not a function]
+ ⨯ [TypeError: __webpack_modules__[moduleId] is not a function] {
+  page: '/'
+}
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 5.1s (1089 modules)
+ GET / 500 in 11377ms
+ GET / 200 in 3975ms
+ GET / 200 in 906ms
+ GET / 200 in 995ms
+ GET / 200 in 808ms
+ GET / 200 in 985ms
+ ○ Compiling /blog/[slug] ...
+ ✓ Compiled /blog/[slug] in 1430ms (1084 modules)
+ GET /blog/acciones-basicas-en-poker 200 in 9258ms
+ GET /blog/acciones-basicas-en-poker 200 in 760ms
+ GET /blog/acciones-basicas-en-poker 200 in 495ms
+ GET /blog/que-es-el-flop-turn-y-river 200 in 378ms
+ GET /blog/que-es-el-flop-turn-y-river 200 in 451ms
+
+D:\Embudo de Ventas\Apps\prokerblog>
+> poker-advisor-blog@0.1.0 dev
+> next dev
+
+   ▲ Next.js 15.5.19
+   - Local:        http://localhost:3000
+   - Network:      http://10.29.254.180:3000
+
+ ✓ Starting...
+ ✓ Ready in 4.9s
+ ○ Compiling /blog/[slug] ...
+ ✓ Compiled /blog/[slug] in 2.2s (703 modules)
+ GET /blog/que-es-el-poker-y-como-se-juega 200 in 5781ms
+ ○ Compiling / ...
+ ✓ Compiled / in 3s (736 modules)
+ GET / 200 in 3617ms
+ GET / 200 in 370ms
+ GET / 200 in 1036ms
+ ○ Compiling /aprende-poker ...
+ ✓ Compiled /aprende-poker in 677ms (731 modules)
+ GET /aprende-poker 200 in 1068ms
+ GET /blog/como-jugar-texas-holdem-paso-a-paso 200 in 211ms
+ GET /blog/que-es-el-flop-turn-y-river 200 in 192ms
+ GET /blog/que-significa-texas-holdem 200 in 186ms
+ GET /blog/objetivo-del-juego-de-poker 200 in 178ms
+ GET /blog/cartas-privadas-y-comunitarias 200 in 190ms
+ GET /blog/que-es-el-dealer-o-boton 200 in 168ms
+ GET /blog/las-ciegas-en-texas-holdem 200 in 238ms
+ GET /blog/que-es-el-preflop 200 in 179ms
+ GET /blog/que-es-el-showdown 200 in 174ms
+ GET /blog/acciones-basicas-en-poker 200 in 174ms
+ GET /blog/como-se-gana-una-mano-de-poker 200 in 180ms
+ GET /aprende-poker 200 in 334ms
+ GET /aprende-poker 200 in 246ms
+ ✓ Compiled in 917ms (745 modules)
+ GET /aprende-poker 200 in 468ms
+ ⨯ Error: Could not find the module "D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '2933376271'
+}
+ ⨯ Error: Could not find the module "D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '1816299307'
+}
+ ⨯ Error: Could not find the module "D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '1816299307'
+}
+ ⨯ Error: Could not find the module "D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '1816299307'
+}
+ ⨯ Error: Could not find the module "D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '2933376271'
+}
+ ⨯ Error: Could not find the module "D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '2933376271'
+}
+ ⨯ [TypeError: __webpack_modules__[moduleId] is not a function] {
+  digest: '2148704065'
+}
+ ⨯ Error: Could not find the module "D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '2933376271'
+}
+[TypeError: __webpack_modules__[moduleId] is not a function]
+ ⨯ [TypeError: __webpack_modules__[moduleId] is not a function]
+ ⨯ [TypeError: __webpack_modules__[moduleId] is not a function] {
+  page: '/aprende-poker'
+}
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 4s (1078 modules)
+ GET /aprende-poker 500 in 10145ms
+ GET /aprende-poker 200 in 3767ms
+ GET /aprende-poker 200 in 946ms
+ GET /aprende-poker 200 in 965ms
+ GET /aprende-poker 200 in 746ms
+ GET /aprende-poker 200 in 612ms
+
+> poker-advisor-blog@0.1.0 dev
+> next dev
+
+   ▲ Next.js 15.5.19
+   - Local:        http://localhost:3000
+   - Network:      http://10.29.254.180:3000
+
+ ✓ Starting...
+ ✓ Ready in 4.8s
+ ○ Compiling / ...
+ ✓ Compiled / in 7.3s (716 modules)
+ GET / 200 in 9138ms
+ ○ Compiling /aprende-poker ...
+ ✓ Compiled /aprende-poker in 910ms (736 modules)
+ GET /aprende-poker 200 in 2248ms
+ ○ Compiling /manos-de-poker ...
+ ✓ Compiled /manos-de-poker in 516ms (724 modules)
+ GET /manos-de-poker 200 in 867ms
+ GET /aprende-poker 200 in 261ms
+ ✓ Compiled in 2.2s (721 modules)
+ GET /aprende-poker 200 in 570ms
+ ✓ Compiled in 989ms (721 modules)
+ GET /aprende-poker 200 in 487ms
+ ✓ Compiled in 430ms (721 modules)
+ GET /aprende-poker 200 in 379ms
+ ✓ Compiled in 400ms (721 modules)
+ GET /aprende-poker 200 in 374ms
+ ✓ Compiled in 492ms (721 modules)
+ GET /aprende-poker 200 in 363ms
+ ✓ Compiled in 487ms (721 modules)
+ GET /aprende-poker 200 in 491ms
+ ○ Compiling /manos-de-poker ...
+ ✓ Compiled /manos-de-poker in 653ms (456 modules)
+ ⨯ Error: Could not find the module "D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '2933376271'
+}
+ GET /manos-de-poker 200 in 1879ms
+ ⨯ Error: Could not find the module "D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '2933376271'
+}
+ ⨯ Error: Could not find the module "D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '1816299307'
+}
+ ⨯ Error: Could not find the module "D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '1816299307'
+}
+ ⨯ Error: Could not find the module "D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '1816299307'
+}
+ ⨯ Error: Could not find the module "D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '2933376271'
+}
+ GET /manos-de-poker 200 in 1717ms
+ ✓ Compiled / in 288ms (471 modules)
+ ⨯ Error: Could not find the module "D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '2933376271'
+}
+ ⨯ Error: Could not find the module "D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '1816299307'
+}
+ ⨯ Error: Could not find the module "D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '1816299307'
+}
+ ⨯ Error: Could not find the module "D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '1816299307'
+}
+ ⨯ Error: Could not find the module "D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '2933376271'
+}
+ ⨯ Error: Could not find the module "D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '2933376271'
+}
+ ⨯ [TypeError: __webpack_modules__[moduleId] is not a function] {
+  digest: '2148704065'
+}
+ ⨯ Error: Could not find the module "D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '2933376271'
+}
+[TypeError: __webpack_modules__[moduleId] is not a function]
+ ⨯ [TypeError: __webpack_modules__[moduleId] is not a function]
+ ⨯ [TypeError: __webpack_modules__[moduleId] is not a function] {
+  page: '/'
+}
+ ⨯ Error: Could not find the module "D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '2933376271'
+}
+ ⨯ Error: Could not find the module "D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '1816299307'
+}
+ ⨯ Error: Could not find the module "D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '1816299307'
+}
+ ⨯ Error: Could not find the module "D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '1816299307'
+}
+ ⨯ Error: Could not find the module "D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '2933376271'
+}
+ ⨯ Error: Could not find the module "D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '2933376271'
+}
+ ⨯ [TypeError: __webpack_modules__[moduleId] is not a function] {
+  digest: '2148704065'
+}
+ ⨯ Error: Could not find the module "D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '2933376271'
+}
+[TypeError: __webpack_modules__[moduleId] is not a function]
+ ⨯ [TypeError: __webpack_modules__[moduleId] is not a function]
+ ⨯ [TypeError: __webpack_modules__[moduleId] is not a function] {
+  page: '/manos-de-poker'
+}
+ ○ Compiling /_error ...
+ GET / 500 in 9998ms
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled /_error in 8.2s (1085 modules)
+ GET /manos-de-poker 500 in 11083ms
+ GET /manos-de-poker 200 in 4719ms
+ GET /manos-de-poker 200 in 4784ms
+
+> poker-advisor-blog@0.1.0 dev
+> next dev
+
+   ▲ Next.js 15.5.19
+   - Local:        http://localhost:3000
+   - Network:      http://10.29.254.180:3000
+
+ ✓ Starting...
+ ✓ Ready in 22.4s
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ○ Compiling /manos-de-poker ...
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled /manos-de-poker in 25.3s (736 modules)
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET /manos-de-poker 200 in 29813ms
+ GET / 200 in 655ms
+ GET /manos-de-poker 200 in 561ms
+ GET / 200 in 378ms
+ GET /manos-de-poker 200 in 311ms
+ ○ Compiling /probabilidades ...
+ ✓ Compiled /probabilidades in 533ms (724 modules)
+ GET /probabilidades 200 in 1020ms
+ ✓ Compiled /estrategia in 466ms (726 modules)
+ GET /estrategia 200 in 916ms
+ ○ Compiling /glosario ...
+ ✓ Compiled /glosario in 719ms (738 modules)
+ GET /glosario 200 in 912ms
+ ○ Compiling /herramientas ...
+ ✓ Compiled /herramientas in 527ms (740 modules)
+ GET /herramientas 200 in 969ms
+ GET / 200 in 389ms
+ ○ Compiling /aprende-poker ...
+ ✓ Compiled /aprende-poker in 844ms (742 modules)
+ GET /aprende-poker 200 in 1334ms
+ ○ Compiling /blog/[slug] ...
+ ✓ Compiled /blog/[slug] in 1249ms (751 modules)
+ GET /blog/que-es-el-poker-y-como-se-juega 200 in 3866ms
+ GET /blog/como-jugar-texas-holdem-paso-a-paso 200 in 173ms
+ GET /blog/que-es-el-flop-turn-y-river 200 in 186ms
+ GET /blog/que-significa-texas-holdem 200 in 172ms
+ ✓ Compiled in 2s (753 modules)
+ GET /blog/que-significa-texas-holdem 200 in 487ms
+ ✓ Compiled in 1009ms (753 modules)
+ GET /blog/que-significa-texas-holdem 200 in 398ms
+ ✓ Compiled in 717ms (753 modules)
+ GET /blog/que-significa-texas-holdem 200 in 361ms
+ ⨯ Error: Could not find the module "D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '2933376271'
+}
+ GET /blog/objetivo-del-juego-de-poker 200 in 1105ms
+ ⨯ Error: Could not find the module "D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '2933376271'
+}
+ ⨯ Error: Could not find the module "D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '1816299307'
+}
+ ⨯ Error: Could not find the module "D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '1816299307'
+}
+ ⨯ Error: Could not find the module "D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>)
+    at stringify (<anonymous>) {
+  digest: '1816299307'
+}
+ ⨯ Error: Could not find the module "D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '2933376271'
+}
+ ⨯ Error: Could not find the module "D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '2933376271'
+}
+ ⨯ [TypeError: __webpack_modules__[moduleId] is not a function] {
+  digest: '2148704065'
+}
+ ⨯ Error: Could not find the module "D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\next-devtools\userspace\app\segment-explorer-node.js#SegmentViewNode" in the React Client Manifest. This is probably a bug in the React Server Components bundler.
+    at stringify (<anonymous>) {
+  digest: '2933376271'
+}
+[TypeError: __webpack_modules__[moduleId] is not a function]
+ ⨯ [TypeError: __webpack_modules__[moduleId] is not a function]
+ ⨯ [TypeError: __webpack_modules__[moduleId] is not a function] {
+  page: '/blog/objetivo-del-juego-de-poker'
+}
+ ○ Compiling /_error ...
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ ✓ Compiled /_error in 7.4s (1100 modules)
+ GET /blog/objetivo-del-juego-de-poker 200 in 5098ms
+ ⨯ Failed to generate static paths for /blog/[slug]:
+[Error: Cannot find module './vendor-chunks/lucide-react.js'
+Require stack:
+- D:\Embudo de Ventas\Apps\prokerblog\.next\server\webpack-runtime.js
+- D:\Embudo de Ventas\Apps\prokerblog\.next\server\app\blog\[slug]\page.js
+- D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\server\require.js
+- D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\server\load-components.js
+- D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\build\utils.js
+- D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\server\dev\static-paths-worker.js
+- D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\compiled\jest-worker\processChild.js] {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ Failed to generate static paths for /blog/[slug]:
+[Error: Cannot find module './vendor-chunks/lucide-react.js'
+Require stack:
+- D:\Embudo de Ventas\Apps\prokerblog\.next\server\webpack-runtime.js
+- D:\Embudo de Ventas\Apps\prokerblog\.next\server\app\blog\[slug]\page.js
+- D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\server\require.js
+- D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\server\load-components.js
+- D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\build\utils.js
+- D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\server\dev\static-paths-worker.js
+- D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\compiled\jest-worker\processChild.js] {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ ⨯ Failed to generate static paths for /blog/[slug]:
+[Error: Cannot find module './vendor-chunks/lucide-react.js'
+Require stack:
+- D:\Embudo de Ventas\Apps\prokerblog\.next\server\webpack-runtime.js
+- D:\Embudo de Ventas\Apps\prokerblog\.next\server\app\blog\[slug]\page.js
+- D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\server\require.js
+- D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\server\load-components.js
+- D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\build\utils.js
+- D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\server\dev\static-paths-worker.js
+- D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\compiled\jest-worker\processChild.js] {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array]
+}
+ GET /blog/objetivo-del-juego-de-poker 500 in 13459ms
+ ⨯ [Error: Cannot find module './vendor-chunks/lucide-react.js'
+Require stack:
+- D:\Embudo de Ventas\Apps\prokerblog\.next\server\webpack-runtime.js
+- D:\Embudo de Ventas\Apps\prokerblog\.next\server\app\blog\[slug]\page.js
+- D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\server\require.js
+- D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\server\load-components.js
+- D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\build\utils.js
+- D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\server\dev\static-paths-worker.js
+- D:\Embudo de Ventas\Apps\prokerblog\node_modules\next\dist\compiled\jest-worker\processChild.js] {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [Array],
+  page: '/blog/objetivo-del-juego-de-poker'
+}
+ GET /blog/objetivo-del-juego-de-poker 500 in 1351ms
+[Error: ENOENT: no such file or directory, stat 'D:\Embudo de Ventas\Apps\prokerblog\.next\cache\webpack\client-development\5.pack.gz'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'D:\\Embudo de Ventas\\Apps\\prokerblog\\.next\\cache\\webpack\\client-development\\5.pack.gz'
+}
+ ⨯ unhandledRejection: [Error: ENOENT: no such file or directory, stat 'D:\Embudo de Ventas\Apps\prokerblog\.next\cache\webpack\client-development\5.pack.gz'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'D:\\Embudo de Ventas\\Apps\\prokerblog\\.next\\cache\\webpack\\client-development\\5.pack.gz'
+}
+ ⨯ unhandledRejection:  [Error: ENOENT: no such file or directory, stat 'D:\Embudo de Ventas\Apps\prokerblog\.next\cache\webpack\client-development\5.pack.gz'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'D:\\Embudo de Ventas\\Apps\\prokerblog\\.next\\cache\\webpack\\client-development\\5.pack.gz'
+}
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, stat 'D:\Embudo de Ventas\Apps\prokerblog\.next\cache\webpack\client-development\5.pack.gz'
+[Error: ENOENT: no such file or directory, stat 'D:\Embudo de Ventas\Apps\prokerblog\.next\cache\webpack\server-development\5.pack.gz'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'D:\\Embudo de Ventas\\Apps\\prokerblog\\.next\\cache\\webpack\\server-development\\5.pack.gz'
+}
+ ⨯ unhandledRejection: [Error: ENOENT: no such file or directory, stat 'D:\Embudo de Ventas\Apps\prokerblog\.next\cache\webpack\server-development\5.pack.gz'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'D:\\Embudo de Ventas\\Apps\\prokerblog\\.next\\cache\\webpack\\server-development\\5.pack.gz'
+}
+ ⨯ unhandledRejection:  [Error: ENOENT: no such file or directory, stat 'D:\Embudo de Ventas\Apps\prokerblog\.next\cache\webpack\server-development\5.pack.gz'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'D:\\Embudo de Ventas\\Apps\\prokerblog\\.next\\cache\\webpack\\server-development\\5.pack.gz'
+}
+[Error: ENOENT: no such file or directory, stat 'D:\Embudo de Ventas\Apps\prokerblog\.next\cache\webpack\server-development\4.pack.gz'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'D:\\Embudo de Ventas\\Apps\\prokerblog\\.next\\cache\\webpack\\server-development\\4.pack.gz'
+}
+ ⨯ unhandledRejection: [Error: ENOENT: no such file or directory, stat 'D:\Embudo de Ventas\Apps\prokerblog\.next\cache\webpack\server-development\4.pack.gz'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'D:\\Embudo de Ventas\\Apps\\prokerblog\\.next\\cache\\webpack\\server-development\\4.pack.gz'
+}
+ ⨯ unhandledRejection:  [Error: ENOENT: no such file or directory, stat 'D:\Embudo de Ventas\Apps\prokerblog\.next\cache\webpack\server-development\4.pack.gz'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: 'D:\\Embudo de Ventas\\Apps\\prokerblog\\.next\\cache\\webpack\\server-development\\4.pack.gz'
+}
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, stat 'D:\Embudo de Ventas\Apps\prokerblog\.next\cache\webpack\server-development\4.pack.gz'
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 1109ms (1104 modules)
+ GET /blog/objetivo-del-juego-de-poker 404 in 1895ms
+ GET / 200 in 354ms
+ ⨯ [Error: ENOENT: no such file or directory, open 'D:\Embudo de Ventas\Apps\prokerblog\.next\server\app\aprende-poker\page.js'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\Embudo de Ventas\\Apps\\prokerblog\\.next\\server\\app\\aprende-poker\\page.js',
+  page: '/aprende-poker'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open 'D:\Embudo de Ventas\Apps\prokerblog\.next\server\pages\_document.js'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\Embudo de Ventas\\Apps\\prokerblog\\.next\\server\\pages\\_document.js'
+}
+ GET /aprende-poker 500 in 15219ms
+ ⨯ [Error: ENOENT: no such file or directory, open 'D:\Embudo de Ventas\Apps\prokerblog\.next\server\app\aprende-poker\page.js'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\Embudo de Ventas\\Apps\\prokerblog\\.next\\server\\app\\aprende-poker\\page.js',
+  page: '/aprende-poker'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open 'D:\Embudo de Ventas\Apps\prokerblog\.next\server\pages\_document.js'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\Embudo de Ventas\\Apps\\prokerblog\\.next\\server\\pages\\_document.js'
+}
+ GET /aprende-poker 500 in 510ms
+ ⨯ [Error: ENOENT: no such file or directory, open 'D:\Embudo de Ventas\Apps\prokerblog\.next\server\app\aprende-poker\page.js'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\Embudo de Ventas\\Apps\\prokerblog\\.next\\server\\app\\aprende-poker\\page.js',
+  page: '/aprende-poker'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open 'D:\Embudo de Ventas\Apps\prokerblog\.next\server\pages\_document.js'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\Embudo de Ventas\\Apps\\prokerblog\\.next\\server\\pages\\_document.js'
+}
+ GET /aprende-poker 500 in 129ms
+[?25h

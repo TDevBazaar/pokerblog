@@ -1,7 +1,39 @@
-.next/
+# Dependencies
 node_modules/
+.pnp
+.pnp.js
+
+# Next.js
+.next/
 out/
-dist/
-*.log
-.env*
-!.env.example
+
+# Build
+*.tsbuildinfo
+next-env.d.ts
+
+# Environment
+.env
+.env*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Coverage
+coverage/
+
+# Stitch (reference material, not part of the app)
+stitch_poker_advisor_academy/
+*.zip
+
+# Vercel
+.vercel
