@@ -28,5 +28,16 @@
   },
   "optionalDependencies": {
     "@next/swc-win32-x64-msvc": "15.5.19"
+  },
+  "supportedArchitectures": {
+    "os": [
+      "win32",
+      "linux"
+    ],
+    "cpu": [
+      "x64",
+      "arm64",
+      "wasm32"
+    ]
   }
 }
