@@ -4,6 +4,7 @@ import { ArrowRight, Calculator, Percent, Smartphone, TableProperties, Target, W
 import { ArticleCard } from "@/components/ArticleCard";
 import { AppPromo } from "@/components/AppPromo";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { JsonLd } from "@/components/JsonLd";
 import { VisitedBadge } from "@/components/VisitedBadge";
 import { Container } from "@/components/Container";
 import { HandRankingTable } from "@/components/HandRankingTable";
@@ -73,8 +74,24 @@ export function CategoryLanding({
     notFound();
   }
 
+  const faqJsonLd = showQuickAnswers
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: quickAnswers.map((item) => ({
+          "@type": "Question",
+          name: item.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: item.answer,
+          },
+        })),
+      }
+    : null;
+
   return (
     <main>
+      {faqJsonLd && <JsonLd data={faqJsonLd} />}
       <section className="border-b border-white/10 bg-site-radial py-12">
         <Container>
           <Breadcrumbs items={[{ label: category.title }]} />

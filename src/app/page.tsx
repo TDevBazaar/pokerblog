@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { BookOpen, Calculator, ListChecks, Search, Smartphone, BookOpenCheck, Swords, Wrench, Check } from "lucide-react";
 
@@ -11,6 +12,14 @@ import { HeroSection } from "@/components/home/HeroSection";
 import { categories } from "@/data/categories";
 import { glossaryTerms } from "@/data/glossary";
 import { getLatestPosts, getPostsByCategory } from "@/lib/utils";
+import { buildPageMetadata } from "@/lib/metadata";
+
+export const metadata: Metadata = buildPageMetadata({
+  title: "La Mejor Guía de Póker y Simulador de Manos | Proker Simulator",
+  description:
+    "Aprende a jugar al póker desde cero. Guías de Texas Hold'em paso a paso, reglas oficiales, ranking de manos, probabilidades y estrategias básicas sin dinero real.",
+  path: "/",
+});
 
 const roadmap = [
   {

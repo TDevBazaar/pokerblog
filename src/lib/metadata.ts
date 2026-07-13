@@ -50,8 +50,8 @@ export function buildCategoryMetadata(slug: string): Metadata {
   }
 
   return buildPageMetadata({
-    title: `${category.title} | ${siteConfig.name}`,
-    description: category.description,
+    title: category.seoTitle || `${category.title} | ${siteConfig.name}`,
+    description: category.seoDescription || category.description,
     path: category.href,
   });
 }

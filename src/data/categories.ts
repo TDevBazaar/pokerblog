@@ -8,6 +8,8 @@ export const categories: Category[] = [
     icon: "book",
     description:
       "Todo lo que necesitas saber para empezar a jugar Texas Hold'em: reglas, rondas, cartas, apuestas y conceptos básicos.",
+    seoTitle: "Guía de Póker para Principiantes: Reglas y Conceptos Básicos",
+    seoDescription: "La mejor guía de póker en español para principiantes. Aprende las reglas oficiales de Texas Hold'em paso a paso, rondas de apuestas y cómo empezar a jugar hoy.",
     topics: [
       "Qué es el póker y cómo se juega",
       "Cómo jugar Texas Hold'em paso a paso",
@@ -34,6 +36,8 @@ export const categories: Category[] = [
     icon: "cards",
     description:
       "Aprende el ranking de manos, que combinacion gana y como resolver empates en Texas Hold'em.",
+    seoTitle: "Ranking de Manos de Póker: ¿Qué Combinación Gana?",
+    seoDescription: "Aprende el orden y ranking de las manos de póker de mayor a menor. Descubre qué combinaciones ganan y cómo se resuelven los empates en Texas Hold'em.",
     topics: [
       "Ranking de manos de póker explicado fácil",
       "Qué gana: color o escalera",
@@ -53,6 +57,8 @@ export const categories: Category[] = [
     icon: "calculator",
     description:
       "Aprende outs, pot odds, equity y calculos simples para tomar mejores decisiones.",
+    seoTitle: "Probabilidades en el Póker: Outs, Odds y Equity Explicados",
+    seoDescription: "Domina las matemáticas del póker. Aprende a calcular outs, pot odds y equity de forma sencilla para tomar decisiones rentables en la mesa.",
     topics: [
       "Qué son los outs en póker",
       "Cómo calcular probabilidades en póker",
@@ -76,6 +82,8 @@ export const categories: Category[] = [
     icon: "strategy",
     description:
       "Aprende cuando apostar, retirarte, jugar agresivo, proteger manos fuertes y evitar errores comunes.",
+    seoTitle: "Estrategias de Póker para Principiantes: Cómo Jugar y Ganar",
+    seoDescription: "Mejora tu juego con consejos de estrategia básica para Texas Hold'em. Aprende cuándo apostar, cuándo retirarte y cómo leer el tamaño de las apuestas.",
     topics: [
       "Estrategia básica de póker para principiantes",
       "Estilos de juego en póker: tight-aggressive, agresivo y pasivo",
@@ -95,6 +103,8 @@ export const categories: Category[] = [
     icon: "glossary",
     description:
       "Aprende el significado de los terminos mas usados en poker.",
+    seoTitle: "Glosario de Póker: Diccionario de Términos Comunes",
+    seoDescription: "Diccionario con el significado de los términos y palabras más usadas en el póker en español (All-in, Check, Flop, Bad beat, C-bet y más).",
     topics: [
       "All-in",
       "Call",
@@ -149,6 +159,8 @@ export const categories: Category[] = [
     icon: "tools",
     description:
       "Calculadoras, simuladores y recursos para practicar decisiones sin apostar dinero.",
+    seoTitle: "Herramientas de Póker: Simuladores y Calculadoras Gratuitas",
+    seoDescription: "Descubre simuladores de manos, calculadoras de pot odds y tablas de outs para practicar y mejorar tus decisiones en el póker sin dinero real.",
     topics: [
       "Mejores herramientas para aprender póker desde el móvil",
       "Qué es y cómo usar una calculadora de odds en póker",

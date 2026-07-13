@@ -54,6 +54,8 @@ export type Category = {
   description: string;
   icon: "book" | "cards" | "calculator" | "strategy" | "glossary" | "tools";
   topics: string[];
+  seoTitle?: string;
+  seoDescription?: string;
 };
 
 export type GlossaryTerm = {
