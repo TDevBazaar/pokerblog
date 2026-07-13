@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Proker Simulator",
   shortName: "Proker Simulator",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://pokeradvisorblog.com",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://pokerblog.yoelv0022.workers.dev",
   description:
     "Blog educativo para aprender Texas Hold'em, manos, probabilidades y estrategia básica sin promover apuestas.",
   googlePlayUrl:
