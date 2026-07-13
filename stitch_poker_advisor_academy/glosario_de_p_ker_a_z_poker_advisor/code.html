@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Glosario de Póker | Poker Advisor</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-fixed": "#241a00",
+                      "tertiary": "#3ce36a",
+                      "outline": "#8a9485",
+                      "surface-container": "#1c1f29",
+                      "secondary": "#e9c349",
+                      "on-tertiary-fixed": "#002108",
+                      "on-primary-container": "#cbffc2",
+                      "primary-fixed-dim": "#88d982",
+                      "on-secondary-fixed-variant": "#574500",
+                      "on-secondary-container": "#342800",
+                      "inverse-on-surface": "#2c303a",
+                      "on-tertiary": "#003912",
+                      "on-secondary": "#3c2f00",
+                      "error-container": "#93000a",
+                      "surface-bright": "#353943",
+                      "outline-variant": "#40493d",
+                      "inverse-surface": "#dfe2ef",
+                      "secondary-fixed": "#ffe088",
+                      "on-tertiary-container": "#c7ffc7",
+                      "surface-tint": "#88d982",
+                      "on-error": "#690005",
+                      "error": "#ffb4ab",
+                      "surface-container-low": "#181b25",
+                      "secondary-fixed-dim": "#e9c349",
+                      "inverse-primary": "#1b6d24",
+                      "on-surface-variant": "#bfcaba",
+                      "on-surface": "#dfe2ef",
+                      "primary": "#88d982",
+                      "on-error-container": "#ffdad6",
+                      "surface": "#0f131c",
+                      "surface-dim": "#0f131c",
+                      "primary-fixed": "#a3f69c",
+                      "background": "#0f131c",
+                      "on-primary": "#003909",
+                      "primary-container": "#2e7d32",
+                      "on-background": "#dfe2ef",
+                      "tertiary-container": "#007f32",
+                      "surface-container-highest": "#31353f",
+                      "tertiary-fixed": "#69ff87",
+                      "surface-container-lowest": "#0a0e17",
+                      "secondary-container": "#af8d11",
+                      "on-primary-fixed-variant": "#005312",
+                      "on-primary-fixed": "#002204",
+                      "surface-variant": "#31353f",
+                      "tertiary-fixed-dim": "#3ce36a",
+                      "surface-container-high": "#262a34",
+                      "on-tertiary-fixed-variant": "#00531e"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "stack-lg": "32px",
+                      "gutter": "24px",
+                      "container-max": "1200px",
+                      "margin-mobile": "20px",
+                      "unit": "4px",
+                      "stack-md": "16px",
+                      "margin-desktop": "48px",
+                      "stack-sm": "8px"
+              },
+              "fontFamily": {
+                      "caption": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Montserrat"
+                      ],
+                      "display-lg": [
+                              "Montserrat"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Montserrat"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Montserrat"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "caption": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .glass-card {
+            background: rgba(28, 31, 41, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-hover:hover {
+            border-color: rgba(136, 217, 130, 0.3);
+            box-shadow: 0 0 15px rgba(136, 217, 130, 0.08);
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+            background: rgba(28, 31, 41, 0.8);
+        }
+
+        .search-focus:focus-within {
+            border-color: #88d982;
+            box-shadow: 0 0 15px rgba(136, 217, 130, 0.15);
+        }
+        
+        .letter-btn.active {
+            background-color: rgba(136, 217, 130, 0.15);
+            color: #88d982;
+            border-color: #88d982;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-md text-body-md antialiased pt-20">
+<!-- TopNavBar -->
+<nav class="bg-background/80 backdrop-blur-xl text-primary font-headline-md text-headline-md font-body-md text-body-md font-label-md text-label-md fixed top-0 w-full z-50 border-b border-white/10 shadow-sm">
+<div class="flex justify-between items-center h-20 px-margin-desktop max-w-container-max mx-auto md:px-margin-desktop px-margin-mobile">
+<div class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight">
+                Poker Advisor
+            </div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#">Learn</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#">Hands</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#">Odds</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#">Strategy</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#">Tools</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:block bg-primary text-on-primary px-6 py-2 rounded-full font-label-md text-label-md hover:bg-primary-fixed transition-colors">
+                    Download App
+                </button>
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-stack-lg">
+<!-- Hero Section -->
+<section class="py-16 md:py-24 text-center">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container border border-outline/20 mb-6">
+<span class="material-symbols-outlined text-tertiary text-[16px]" style="font-variation-settings: 'FILL' 1;">book</span>
+<span class="font-label-md text-label-md text-tertiary">Recursos Educativos</span>
+</div>
+<h1 class="font-display-lg text-display-lg font-bold text-on-surface mb-6">
+                Glosario de Póker
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12">
+                Aprende el significado de los términos más usados en póker, desde conceptos básicos hasta estrategia avanzada. Domina el lenguaje de las mesas.
+            </p>
+<!-- Search Bar -->
+<div class="max-w-xl mx-auto relative search-focus rounded-full border border-outline/30 bg-surface-container transition-all duration-300">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-on-surface-variant">search</span>
+</div>
+<input class="w-full bg-transparent border-none py-4 pl-12 pr-4 rounded-full text-on-surface placeholder:text-on-surface-variant/50 focus:ring-0 font-body-lg text-body-lg" placeholder="Buscar término (ej. 'All-in', '3-bet')..." type="text"/>
+</div>
+</section>
+<!-- Main Content Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Glossary Main Area (Left) -->
+<div class="lg:col-span-8 xl:col-span-9 space-y-stack-lg">
+<!-- Alphabetic Filter -->
+<div class="glass-card rounded-xl p-4 sticky top-24 z-40">
+<div class="flex flex-wrap gap-2 justify-center">
+<button class="letter-btn active w-8 h-8 rounded flex items-center justify-center font-label-md text-label-md border border-transparent transition-colors">A</button>
+<button class="letter-btn w-8 h-8 rounded flex items-center justify-center font-label-md text-label-md border border-transparent hover:bg-surface-variant text-on-surface-variant transition-colors">B</button>
+<button class="letter-btn w-8 h-8 rounded flex items-center justify-center font-label-md text-label-md border border-transparent hover:bg-surface-variant text-on-surface-variant transition-colors">C</button>
+<button class="letter-btn w-8 h-8 rounded flex items-center justify-center font-label-md text-label-md border border-transparent hover:bg-surface-variant text-on-surface-variant transition-colors">D</button>
+<button class="letter-btn w-8 h-8 rounded flex items-center justify-center font-label-md text-label-md border border-transparent hover:bg-surface-variant text-on-surface-variant transition-colors">E</button>
+<button class="letter-btn w-8 h-8 rounded flex items-center justify-center font-label-md text-label-md border border-transparent hover:bg-surface-variant text-on-surface-variant transition-colors">F</button>
+<button class="letter-btn w-8 h-8 rounded flex items-center justify-center font-label-md text-label-md border border-transparent hover:bg-surface-variant text-on-surface-variant transition-colors">G</button>
+<button class="letter-btn w-8 h-8 rounded flex items-center justify-center font-label-md text-label-md border border-transparent hover:bg-surface-variant text-on-surface-variant transition-colors">H</button>
+<button class="letter-btn w-8 h-8 rounded flex items-center justify-center font-label-md text-label-md border border-transparent hover:bg-surface-variant text-on-surface-variant transition-colors opacity-50 cursor-not-allowed">I</button>
+<span class="text-on-surface-variant flex items-center justify-center px-1">...</span>
+<button class="letter-btn w-8 h-8 rounded flex items-center justify-center font-label-md text-label-md border border-transparent hover:bg-surface-variant text-on-surface-variant transition-colors">T</button>
+<button class="letter-btn w-8 h-8 rounded flex items-center justify-center font-label-md text-label-md border border-transparent hover:bg-surface-variant text-on-surface-variant transition-colors">U</button>
+<button class="letter-btn w-8 h-8 rounded flex items-center justify-center font-label-md text-label-md border border-transparent hover:bg-surface-variant text-on-surface-variant transition-colors">V</button>
+<button class="letter-btn w-8 h-8 rounded flex items-center justify-center font-label-md text-label-md border border-transparent hover:bg-surface-variant text-on-surface-variant transition-colors opacity-50 cursor-not-allowed">W</button>
+<button class="letter-btn w-8 h-8 rounded flex items-center justify-center font-label-md text-label-md border border-transparent hover:bg-surface-variant text-on-surface-variant transition-colors opacity-50 cursor-not-allowed">X</button>
+<button class="letter-btn w-8 h-8 rounded flex items-center justify-center font-label-md text-label-md border border-transparent hover:bg-surface-variant text-on-surface-variant transition-colors opacity-50 cursor-not-allowed">Y</button>
+<button class="letter-btn w-8 h-8 rounded flex items-center justify-center font-label-md text-label-md border border-transparent hover:bg-surface-variant text-on-surface-variant transition-colors opacity-50 cursor-not-allowed">Z</button>
+</div>
+</div>
+<!-- Terms Grid -->
+<div class="mb-8">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6 border-b border-outline/20 pb-2">A</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Term Card -->
+<div class="glass-card card-hover rounded-xl p-6 cursor-pointer group flex flex-col justify-between h-full border-t-2 border-t-primary/50">
+<div>
+<div class="flex justify-between items-start mb-3">
+<h3 class="font-headline-md text-headline-md text-primary font-bold">All-in</h3>
+<span class="px-2 py-1 bg-surface-variant rounded text-xs font-label-md text-on-surface-variant uppercase tracking-wider">Acción</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">
+                                    Apostar la totalidad de las fichas que un jugador tiene en la mesa en una sola mano. Si otro jugador apuesta más de lo que tienes, puedes igualar yendo "all-in" por tu cantidad restante.
+                                </p>
+</div>
+<div class="mt-4 flex items-center text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="font-label-md text-label-md mr-1">Ver ejemplo</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</div>
+</div>
+<!-- Term Card -->
+<div class="glass-card card-hover rounded-xl p-6 cursor-pointer group flex flex-col justify-between h-full">
+<div>
+<div class="flex justify-between items-start mb-3">
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">Ante</h3>
+<span class="px-2 py-1 bg-surface-variant rounded text-xs font-label-md text-on-surface-variant uppercase tracking-wider">Estructura</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">
+                                    Una pequeña apuesta forzada que todos los jugadores en la mesa deben pagar antes de que se repartan las cartas. Común en torneos y en Stud poker.
+                                </p>
+</div>
+<div class="mt-4 flex items-center text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="font-label-md text-label-md mr-1">Ver detalles</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</div>
+</div>
+<!-- Term Card -->
+<div class="glass-card card-hover rounded-xl p-6 cursor-pointer group flex flex-col justify-between h-full">
+<div>
+<div class="flex justify-between items-start mb-3">
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">Any Two Cards (ATC)</h3>
+<span class="px-2 py-1 bg-surface-variant rounded text-xs font-label-md text-on-surface-variant uppercase tracking-wider">Concepto</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">
+                                    Expresión usada para describir una situación donde un jugador jugaría (generalmente iría all-in) sin importar qué dos cartas iniciales tenga, basándose en la situación del torneo o la posición.
+                                </p>
+</div>
+<div class="mt-4 flex items-center text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="font-label-md text-label-md mr-1">Ver estrategia</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mb-8">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6 border-b border-outline/20 pb-2">B</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Term Card -->
+<div class="glass-card card-hover rounded-xl p-6 cursor-pointer group flex flex-col justify-between h-full">
+<div>
+<div class="flex justify-between items-start mb-3">
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">Bad Beat</h3>
+<span class="px-2 py-1 bg-error-container text-on-error-container rounded text-xs font-label-md uppercase tracking-wider">Concepto</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">
+                                    Cuando una mano estadísticamente muy fuerte pierde contra una mano inferior que conecta cartas milagrosas (outs) en las calles finales, desafiando las probabilidades.
+                                </p>
+</div>
+<div class="mt-4 flex items-center text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="font-label-md text-label-md mr-1">Ver cálculo de odds</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</div>
+</div>
+<!-- Term Card -->
+<div class="glass-card card-hover rounded-xl p-6 cursor-pointer group flex flex-col justify-between h-full border-t-2 border-t-secondary/50">
+<div>
+<div class="flex justify-between items-start mb-3">
+<h3 class="font-headline-md text-headline-md text-secondary font-bold">Bankroll</h3>
+<span class="px-2 py-1 bg-secondary-container text-on-secondary-container rounded text-xs font-label-md uppercase tracking-wider">Gestión</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3">
+                                    La cantidad total de dinero que un jugador tiene dedicada exclusivamente para jugar al póker. La gestión del bankroll (BRM) es crucial para la supervivencia a largo plazo.
+                                </p>
+</div>
+<div class="mt-4 flex items-center text-secondary opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="font-label-md text-label-md mr-1">Aprender gestión de banca</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar (Right) -->
+<aside class="lg:col-span-4 xl:col-span-3 space-y-6">
+<!-- Trending Terms -->
+<div class="glass-card rounded-xl p-6">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">trending_up</span>
+                        Más Buscados
+                    </h3>
+<ul class="space-y-3">
+<li>
+<a class="flex justify-between items-center py-2 border-b border-outline/10 hover:text-primary transition-colors text-on-surface-variant" href="#">
+<span>3-bet</span>
+<span class="material-symbols-outlined text-[16px] opacity-50">chevron_right</span>
+</a>
+</li>
+<li>
+<a class="flex justify-between items-center py-2 border-b border-outline/10 hover:text-primary transition-colors text-on-surface-variant" href="#">
+<span>Continuation Bet (C-bet)</span>
+<span class="material-symbols-outlined text-[16px] opacity-50">chevron_right</span>
+</a>
+</li>
+<li>
+<a class="flex justify-between items-center py-2 border-b border-outline/10 hover:text-primary transition-colors text-on-surface-variant" href="#">
+<span>Expected Value (EV)</span>
+<span class="material-symbols-outlined text-[16px] opacity-50">chevron_right</span>
+</a>
+</li>
+<li>
+<a class="flex justify-between items-center py-2 border-b border-outline/10 hover:text-primary transition-colors text-on-surface-variant" href="#">
+<span>GTO (Game Theory Optimal)</span>
+<span class="material-symbols-outlined text-[16px] opacity-50">chevron_right</span>
+</a>
+</li>
+<li>
+<a class="flex justify-between items-center py-2 hover:text-primary transition-colors text-on-surface-variant" href="#">
+<span>Squeeze</span>
+<span class="material-symbols-outlined text-[16px] opacity-50">chevron_right</span>
+</a>
+</li>
+</ul>
+</div>
+<!-- Categories -->
+<div class="glass-card rounded-xl p-6">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary">category</span>
+                        Categorías
+                    </h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1.5 bg-surface-variant rounded-full text-xs font-label-md text-on-surface hover:bg-primary/20 hover:text-primary cursor-pointer transition-colors">Acción (42)</span>
+<span class="px-3 py-1.5 bg-surface-variant rounded-full text-xs font-label-md text-on-surface hover:bg-primary/20 hover:text-primary cursor-pointer transition-colors">Matemáticas (18)</span>
+<span class="px-3 py-1.5 bg-surface-variant rounded-full text-xs font-label-md text-on-surface hover:bg-primary/20 hover:text-primary cursor-pointer transition-colors">Posición (12)</span>
+<span class="px-3 py-1.5 bg-surface-variant rounded-full text-xs font-label-md text-on-surface hover:bg-primary/20 hover:text-primary cursor-pointer transition-colors">Torneos (25)</span>
+<span class="px-3 py-1.5 bg-surface-variant rounded-full text-xs font-label-md text-on-surface hover:bg-primary/20 hover:text-primary cursor-pointer transition-colors">Psicología (8)</span>
+</div>
+</div>
+</aside>
+</div>
+<!-- CTA Section -->
+<section class="mt-24 mb-12">
+<div class="glass-card rounded-2xl p-8 md:p-12 text-center relative overflow-hidden border-t border-t-primary/30">
+<!-- Abstract background element -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none"></div>
+<h2 class="font-display-lg text-display-lg md:text-display-lg font-bold text-on-surface mb-4 relative z-10">
+                    Lleva el glosario en tu bolsillo
+                </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-8 relative z-10">
+                    Descarga Poker Advisor para acceder a las definiciones, cálculos de odds en tiempo real y artículos de estrategia directamente desde la mesa.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-label-md text-label-md font-bold hover:bg-primary-fixed transition-colors shadow-[0_0_15px_rgba(136,217,130,0.3)]">
+                        Descargar para iOS
+                    </button>
+<button class="bg-surface-bright border border-outline/50 text-on-surface px-8 py-3 rounded-full font-label-md text-label-md font-bold hover:bg-surface-variant hover:border-primary/50 transition-colors">
+                        Descargar para Android
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest text-secondary font-body-md text-body-md font-caption text-caption font-headline-md text-headline-md w-full py-stack-lg border-t border-white/10 flat no shadows">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="col-span-1 md:col-span-1">
+<div class="font-headline-md text-headline-md font-bold text-on-surface mb-4">
+                    Poker Advisor
+                </div>
+<p class="text-on-surface-variant font-caption text-caption mb-4">
+                    © 2024 Poker Advisor. Educational use only. No real money gambling involved.
+                </p>
+</div>
+<div class="col-span-1 md:col-span-3 flex flex-wrap gap-x-8 gap-y-4 md:justify-end items-center">
+<a class="text-on-surface-variant hover:text-secondary underline decoration-2 underline-offset-4 opacity-80 transition-opacity" href="#">About Us</a>
+<a class="text-on-surface-variant hover:text-secondary underline decoration-2 underline-offset-4 opacity-80 transition-opacity" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-secondary underline decoration-2 underline-offset-4 opacity-80 transition-opacity" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-secondary underline decoration-2 underline-offset-4 opacity-80 transition-opacity" href="#">Responsible Play</a>
+<a class="text-on-surface-variant hover:text-secondary underline decoration-2 underline-offset-4 opacity-80 transition-opacity" href="#">Contact</a>
+<a class="text-on-surface-variant hover:text-secondary underline decoration-2 underline-offset-4 opacity-80 transition-opacity" href="#">FAQ</a>
+</div>
+</div>
+</footer>
+</body></html>

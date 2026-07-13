@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Poker Advisor - Descargar</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Montserrat:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#262a34",
+                        "on-tertiary-fixed-variant": "#00531e",
+                        "on-secondary-container": "#342800",
+                        "secondary-fixed": "#ffe088",
+                        "surface-container-low": "#181b25",
+                        "inverse-surface": "#dfe2ef",
+                        "on-primary-container": "#cbffc2",
+                        "tertiary-fixed": "#69ff87",
+                        "primary-container": "#2e7d32",
+                        "background": "#0f131c",
+                        "error-container": "#93000a",
+                        "on-secondary-fixed": "#241a00",
+                        "surface-variant": "#31353f",
+                        "tertiary": "#3ce36a",
+                        "tertiary-fixed-dim": "#3ce36a",
+                        "on-primary-fixed": "#002204",
+                        "on-surface-variant": "#bfcaba",
+                        "outline": "#8a9485",
+                        "on-tertiary-fixed": "#002108",
+                        "secondary-fixed-dim": "#e9c349",
+                        "on-surface": "#dfe2ef",
+                        "on-secondary": "#3c2f00",
+                        "on-tertiary-container": "#c7ffc7",
+                        "surface-tint": "#88d982",
+                        "on-secondary-fixed-variant": "#574500",
+                        "surface-dim": "#0f131c",
+                        "surface": "#0f131c",
+                        "on-error": "#690005",
+                        "surface-container-lowest": "#0a0e17",
+                        "surface-container": "#1c1f29",
+                        "error": "#ffb4ab",
+                        "on-error-container": "#ffdad6",
+                        "on-background": "#dfe2ef",
+                        "inverse-on-surface": "#2c303a",
+                        "primary-fixed-dim": "#88d982",
+                        "on-primary-fixed-variant": "#005312",
+                        "primary": "#88d982",
+                        "surface-container-highest": "#31353f",
+                        "primary-fixed": "#a3f69c",
+                        "secondary-container": "#af8d11",
+                        "on-tertiary": "#003912",
+                        "outline-variant": "#40493d",
+                        "tertiary-container": "#007f32",
+                        "surface-bright": "#353943",
+                        "secondary": "#e9c349",
+                        "on-primary": "#003909",
+                        "inverse-primary": "#1b6d24"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "48px",
+                        "stack-lg": "32px",
+                        "unit": "4px",
+                        "container-max": "1200px",
+                        "gutter": "24px",
+                        "stack-md": "16px",
+                        "margin-mobile": "20px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "display-lg": ["Montserrat"],
+                        "headline-lg": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Montserrat"],
+                        "caption": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(38, 42, 52, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+        .glow-primary {
+            box-shadow: 0 0 20px rgba(136, 217, 130, 0.15);
+        }
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(90deg, #88d982, #e9c349);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased overflow-x-hidden selection:bg-primary/30 selection:text-primary-fixed">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-white/10 shadow-sm transition-all duration-300" id="navbar">
+<div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-[32px]" style="font-variation-settings: 'FILL' 1;">playing_cards</span>
+<span class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight">Poker Advisor</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#features">Learn</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#comparison">Tools</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#faq">Strategy</a>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-6 py-3 rounded-DEFAULT hover:bg-primary-fixed transition-colors shadow-[0_0_15px_rgba(136,217,130,0.2)]">Download App</button>
+</div>
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined text-[28px]">menu</span>
+</button>
+</div>
+</nav>
+<main class="pt-24 pb-stack-lg">
+<!-- Hero Section -->
+<section class="relative min-h-[90vh] flex items-center pt-12 pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto overflow-hidden">
+<div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
+<div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary rounded-full mix-blend-screen filter blur-[120px]"></div>
+<div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary rounded-full mix-blend-screen filter blur-[120px]"></div>
+</div>
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
+<div class="flex flex-col gap-stack-md">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 w-fit mb-4">
+<span class="material-symbols-outlined text-primary text-[16px]">school</span>
+<span class="text-primary font-label-md text-label-md">Educational Platform</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface">
+                        Poker Advisor: <br/>
+<span class="text-gradient">practica mejores decisiones</span> de póker
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-[500px]">
+                        Simula manos, analiza situaciones y aprende cuándo jugar sin apostar dinero. Elevate your strategic thinking with advanced analytics.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 mt-8">
+<button class="flex items-center justify-center gap-3 bg-on-surface text-surface py-3 px-6 rounded-DEFAULT hover:bg-surface-variant hover:text-on-surface transition-colors group">
+<svg class="w-6 h-6 fill-current" viewbox="0 0 24 24"><path d="M17.523 15.3414C17.523 11.2335 20.8718 9.24354 21.0267 9.14167C19.123 6.34778 16.147 5.92209 15.1506 5.8039C12.6738 5.54924 10.252 7.28821 8.98394 7.28821C7.71587 7.28821 5.71962 5.82736 3.65997 5.87524C1.00282 5.92209 -1.33235 8.95934 -2.71618 11.3789C-5.54972 16.3218 -3.19067 23.639 1.54585 24.3217C3.86438 24.6545 5.0441 23.2384 7.74797 23.2384C10.4308 23.2384 11.4586 24.6545 13.9141 24.6545C16.3686 24.6545 18.5284 21.8494 19.8913 19.8258C21.464 17.494 22.1121 15.2288 22.1463 15.1106C22.0725 15.0818 17.523 13.3403 17.523 15.3414ZM11.9056 3.86423C13.2082 2.27786 14.0734 0.111812 13.8341 -2C11.9688 -1.9261 9.6975 0.771963 8.35639 2.33919C7.165 3.73177 6.18847 5.94025 6.47169 8.02641C8.56363 8.18809 10.601 5.45266 11.9056 3.86423Z" transform="translate(2 2)"></path></svg>
+<div class="text-left">
+<div class="text-[10px] leading-none opacity-80">Download on the</div>
+<div class="font-label-md text-label-md">App Store</div>
+</div>
+</button>
+<button class="flex items-center justify-center gap-3 bg-surface-container-high border border-outline/30 text-on-surface py-3 px-6 rounded-DEFAULT hover:bg-surface-variant transition-colors">
+<svg class="w-6 h-6" viewbox="0 0 24 24"><path d="M3.6 20.3L15.3 13.5 18 12 3.6 3.7C3.2 3.5 2.8 3.6 2.6 3.9 2.5 4.1 2.5 4.3 2.5 4.5v15c0 .3.2.6.5.7.2.1.4.1.6 0z" fill="#4CAF50"></path><path d="M15.3 13.5l2.7-1.5 3.3-1.9c.4-.2.4-.8 0-1l-3.3-1.9-2.7-1.5-11.7 6.8 11.7 6.8z" fill="#FFC107"></path><path d="M3.6 3.7l11.7 6.8-2.7 1.5L3.6 3.7z" fill="#F44336"></path><path d="M3.6 20.3l11.7-6.8-2.7-1.5L3.6 20.3z" fill="#2196F3"></path></svg>
+<div class="text-left">
+<div class="text-[10px] leading-none opacity-80">GET IT ON</div>
+<div class="font-label-md text-label-md">Google Play</div>
+</div>
+</button>
+</div>
+</div>
+<div class="relative w-full aspect-[4/5] md:aspect-square flex justify-center items-center">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/5 to-secondary/5 rounded-full filter blur-[60px] animate-pulse"></div>
+<img alt="App Interface Preview" class="relative z-10 w-[85%] object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] transform rotate-[-5deg] hover:rotate-0 transition-transform duration-700 ease-out" data-alt="A highly detailed 3D render of a sleek, modern smartphone resting on a dark green felt poker table surface. The phone screen displays a sophisticated poker analytics app interface with charts, odds, and brain icons, utilizing a dark mode color palette with green and gold accents. Scattered around the phone are premium clay poker chips in blue, red, and black, alongside two playing cards showing Ace of Spades. Soft, dramatic lighting highlights the metallic edges of the phone and the texture of the felt, creating a premium, analytical atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAv5cetQSdxPpBg-tusuORy_qB6r3dwNZ98KptfFTY0dQs-QFrW3Ao0Dh_PypfxUcEM8zOJm0M9q9G-3SeKSZjtOTnokSzfs4C3X3Gd4-AE8W9Q28FeXfGQ9-AuXIBI1PXy3aTfM-lcF9zkjKfcpy3nxuiO5x2dOBUOoIZ7sn6H4UGvPzWDkofjozi80TGVjxzqXAFOTBLG9rX5Rei-QNjncUccHGD97QpRRDk4-LF0hmO7ICqdmz3mSy4bvgUF88hKPskH9xiSEto"/>
+</div>
+</div>
+</section>
+<!-- Features Section (Bento Grid) -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto" id="features">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Elevate Your Game</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-[600px] mx-auto">Master the math and strategy behind the decisions, completely risk-free.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Feature 1: Large Span -->
+<div class="glass-card rounded-xl p-8 md:col-span-2 flex flex-col justify-between group relative overflow-hidden border-t-2 border-t-primary">
+<div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[120px] text-primary" style="font-variation-settings: 'FILL' 1;">analytics</span>
+</div>
+<div class="relative z-10 mb-8">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary">monitoring</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Analiza manos de Texas Hold’em</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">Input specific scenarios to calculate equity, pot odds, and optimal ranges. Our engine breaks down the math so you can understand the 'why' behind every move.</p>
+</div>
+<div class="relative z-10 w-full h-32 bg-surface rounded-lg border border-white/5 flex items-end p-4 gap-2">
+<!-- Mock Chart -->
+<div class="w-1/6 bg-primary/20 rounded-t-sm h-[40%] relative"><div class="absolute bottom-full w-full text-center text-caption text-on-surface-variant mb-1">Pre</div></div>
+<div class="w-1/6 bg-primary/40 rounded-t-sm h-[60%] relative"><div class="absolute bottom-full w-full text-center text-caption text-on-surface-variant mb-1">Flop</div></div>
+<div class="w-1/6 bg-primary/60 rounded-t-sm h-[75%] relative"><div class="absolute bottom-full w-full text-center text-caption text-on-surface-variant mb-1">Turn</div></div>
+<div class="w-1/6 bg-primary/80 rounded-t-sm h-[90%] relative"><div class="absolute bottom-full w-full text-center text-caption text-on-surface-variant mb-1">River</div></div>
+<div class="w-2/6 pl-4 flex flex-col justify-center">
+<span class="text-caption text-on-surface-variant">Win Probability</span>
+<span class="font-headline-md text-headline-md text-primary">72.4%</span>
+</div>
+</div>
+</div>
+<!-- Feature 2 -->
+<div class="glass-card rounded-xl p-8 flex flex-col relative overflow-hidden">
+<div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-secondary">school</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Ideal para principiantes</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Structured learning paths that take you from understanding hand rankings to complex GTO concepts at your own pace.</p>
+<div class="mt-auto space-y-3">
+<div class="flex items-center gap-3 p-3 rounded-lg bg-surface/50 border border-white/5">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="font-label-md text-label-md text-on-surface">Interactive Quizzes</span>
+</div>
+<div class="flex items-center gap-3 p-3 rounded-lg bg-surface/50 border border-white/5">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span class="font-label-md text-label-md text-on-surface">Glossary of Terms</span>
+</div>
+</div>
+</div>
+<!-- Feature 3 -->
+<div class="glass-card rounded-xl p-8 md:col-span-3 flex flex-col md:flex-row items-center justify-between gap-8 border-l-4 border-l-secondary">
+<div class="flex-1">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/10 border border-secondary/20 mb-4">
+<span class="material-symbols-outlined text-secondary text-[16px]">verified_user</span>
+<span class="text-secondary font-label-md text-label-md">Safe Environment</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-3">Practica sin apostar dinero</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">Focus purely on the mathematical and psychological aspects of the game. Poker Advisor uses simulated chips and scenarios, ensuring a stress-free environment dedicated solely to intellectual improvement.</p>
+</div>
+<div class="w-full md:w-1/3 flex justify-center">
+<div class="relative w-32 h-32">
+<div class="absolute inset-0 bg-secondary rounded-full filter blur-[40px] opacity-20"></div>
+<span class="material-symbols-outlined text-[120px] text-surface-variant absolute inset-0 flex items-center justify-center">monetization_on</span>
+<span class="material-symbols-outlined text-[120px] text-secondary absolute inset-0 flex items-center justify-center" style="clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);">block</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Comparison Section -->
+<section class="py-24 bg-surface-container-low border-y border-white/5" id="comparison">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Education vs Gambling</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Why choose an analytical approach over a traditional casino app.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+<!-- Casino Column -->
+<div class="glass-card rounded-xl p-8 border border-error/20 bg-surface/30">
+<div class="flex items-center gap-3 mb-6 pb-6 border-b border-white/10">
+<span class="material-symbols-outlined text-error text-[28px]">casino</span>
+<h3 class="font-headline-md text-headline-md text-on-surface opacity-60">Casino Apps</h3>
+</div>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-error opacity-60 mt-0.5">close</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Focus on real-money deposits and immediate risk.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-error opacity-60 mt-0.5">close</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Designed for adrenaline and entertainment over skill.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-error opacity-60 mt-0.5">close</span>
+<span class="font-body-md text-body-md text-on-surface-variant">Lacks detailed breakdown of hand probabilities.</span>
+</li>
+</ul>
+</div>
+<!-- Advisor Column -->
+<div class="glass-card rounded-xl p-8 border border-primary/30 glow-primary bg-primary/5 relative overflow-hidden">
+<div class="absolute -right-10 -top-10 w-32 h-32 bg-primary/10 rounded-full blur-2xl"></div>
+<div class="flex items-center gap-3 mb-6 pb-6 border-b border-primary/20 relative z-10">
+<span class="material-symbols-outlined text-primary text-[28px]" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<h3 class="font-headline-md text-headline-md text-primary">Poker Advisor</h3>
+</div>
+<ul class="space-y-4 relative z-10">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5">check</span>
+<span class="font-body-md text-body-md text-on-surface">Zero financial risk; purely educational focus.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5">check</span>
+<span class="font-body-md text-body-md text-on-surface">Designed to build long-term strategic competence.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5">check</span>
+<span class="font-body-md text-body-md text-on-surface">Provides deep analytics, equity calculators, and GTO basics.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-24 max-w-3xl mx-auto px-margin-mobile md:px-margin-desktop" id="faq">
+<div class="text-center mb-12">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Common Questions</h2>
+</div>
+<div class="space-y-4">
+<!-- FAQ Item 1 -->
+<div class="glass-card rounded-lg p-6 border border-white/5 hover:border-white/10 transition-colors">
+<div class="flex justify-between items-center cursor-pointer group">
+<h4 class="font-headline-md text-headline-md text-on-surface text-[18px]">¿Puedo ganar dinero real con la app?</h4>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">add</span>
+</div>
+<div class="mt-4 pt-4 border-t border-white/5">
+<p class="font-body-md text-body-md text-on-surface-variant">No. Poker Advisor es una herramienta estrictamente educativa. No aceptamos depósitos, no permitimos apuestas y no ofrecemos premios en dinero real. Nuestro único objetivo es mejorar tu comprensión del juego.</p>
+</div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="glass-card rounded-lg p-6 border border-white/5 hover:border-white/10 transition-colors">
+<div class="flex justify-between items-center cursor-pointer group">
+<h4 class="font-headline-md text-headline-md text-on-surface text-[18px]">¿Necesito conocimientos previos para usarla?</h4>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">add</span>
+</div>
+<div class="mt-4 pt-4 border-t border-white/5">
+<p class="font-body-md text-body-md text-on-surface-variant">No. Contamos con módulos de entrenamiento que van desde las reglas más básicas hasta conceptos avanzados de teoría de juegos óptima (GTO).</p>
+</div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="glass-card rounded-lg p-6 border border-white/5 hover:border-white/10 transition-colors">
+<div class="flex justify-between items-center cursor-pointer group">
+<h4 class="font-headline-md text-headline-md text-on-surface text-[18px]">¿Cómo funciona el simulador de manos?</h4>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">add</span>
+</div>
+<div class="mt-4 pt-4 border-t border-white/5">
+<p class="font-body-md text-body-md text-on-surface-variant">Puedes introducir tus cartas y las cartas comunitarias, y la aplicación calculará instantáneamente tu 'equity' (probabilidad de ganar) contra rangos de manos específicos de tus oponentes simulados.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Component from JSON -->
+<footer class="bg-surface-container-lowest w-full py-stack-lg border-t border-white/10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="md:col-span-1 flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[24px]" style="font-variation-settings: 'FILL' 1;">playing_cards</span>
+<span class="font-headline-md text-headline-md font-bold text-on-surface">Poker Advisor</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant mt-2 max-w-[250px]">
+                    © 2024 Poker Advisor. Educational use only. No real money gambling involved.
+                </p>
+<div class="p-3 border border-secondary/20 bg-secondary/5 rounded-DEFAULT mt-4 inline-block w-fit">
+<p class="font-caption text-caption text-secondary font-bold">No es casino, no permite apuestas, no garantiza ganancias.</p>
+</div>
+</div>
+<div class="md:col-span-1 flex flex-col gap-3">
+<h4 class="font-label-md text-label-md text-on-surface mb-2">Platform</h4>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary underline decoration-2 underline-offset-4 opacity-80 hover:opacity-100 transition-all" href="#">About Us</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary underline decoration-2 underline-offset-4 opacity-80 hover:opacity-100 transition-all" href="#">FAQ</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary underline decoration-2 underline-offset-4 opacity-80 hover:opacity-100 transition-all" href="#">Contact</a>
+</div>
+<div class="md:col-span-1 flex flex-col gap-3">
+<h4 class="font-label-md text-label-md text-on-surface mb-2">Legal</h4>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary underline decoration-2 underline-offset-4 opacity-80 hover:opacity-100 transition-all" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary underline decoration-2 underline-offset-4 opacity-80 hover:opacity-100 transition-all" href="#">Privacy Policy</a>
+</div>
+<div class="md:col-span-1 flex flex-col gap-3">
+<h4 class="font-label-md text-label-md text-on-surface mb-2">Ethics</h4>
+<a class="font-body-md text-body-md text-secondary font-bold hover:text-secondary underline decoration-2 underline-offset-4 opacity-80 hover:opacity-100 transition-all flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[18px]">health_and_safety</span>
+                    Responsible Play
+                </a>
+</div>
+</div>
+</footer>
+</body></html>

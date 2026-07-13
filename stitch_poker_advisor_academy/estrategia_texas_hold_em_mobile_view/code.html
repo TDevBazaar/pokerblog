@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cómo jugar Texas Hold’em: Guía completa para principiantes - Poker Advisor</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#ffe088",
+                        "on-surface": "#dfe2ef",
+                        "on-secondary-fixed": "#241a00",
+                        "inverse-surface": "#dfe2ef",
+                        "on-primary-fixed-variant": "#005312",
+                        "primary-fixed": "#a3f69c",
+                        "primary-fixed-dim": "#88d982",
+                        "tertiary-fixed-dim": "#3ce36a",
+                        "surface": "#0f131c",
+                        "secondary-fixed-dim": "#e9c349",
+                        "surface-variant": "#31353f",
+                        "error": "#ffb4ab",
+                        "outline-variant": "#40493d",
+                        "outline": "#8a9485",
+                        "on-surface-variant": "#bfcaba",
+                        "primary-container": "#2e7d32",
+                        "error-container": "#93000a",
+                        "surface-container-highest": "#31353f",
+                        "on-tertiary-container": "#c7ffc7",
+                        "surface-container-lowest": "#0a0e17",
+                        "surface-container-low": "#181b25",
+                        "on-background": "#dfe2ef",
+                        "on-secondary-container": "#342800",
+                        "on-primary-container": "#cbffc2",
+                        "surface-bright": "#353943",
+                        "inverse-on-surface": "#2c303a",
+                        "on-error-container": "#ffdad6",
+                        "tertiary": "#3ce36a",
+                        "surface-dim": "#0f131c",
+                        "on-secondary-fixed-variant": "#574500",
+                        "on-tertiary": "#003912",
+                        "surface-tint": "#88d982",
+                        "tertiary-fixed": "#69ff87",
+                        "secondary-container": "#af8d11",
+                        "on-primary-fixed": "#002204",
+                        "surface-container-high": "#262a34",
+                        "surface-container": "#1c1f29",
+                        "primary": "#88d982",
+                        "on-error": "#690005",
+                        "secondary": "#e9c349",
+                        "inverse-primary": "#1b6d24",
+                        "tertiary-container": "#007f32",
+                        "on-tertiary-fixed": "#002108",
+                        "on-primary": "#003909",
+                        "on-tertiary-fixed-variant": "#00531e",
+                        "background": "#0f131c",
+                        "on-secondary": "#3c2f00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "stack-sm": "8px",
+                        "gutter": "16px", /* Adjusted for mobile default */
+                        "margin-mobile": "20px",
+                        "stack-md": "16px",
+                        "margin-desktop": "48px",
+                        "stack-lg": "32px",
+                        "container-max": "1200px"
+                    },
+                    "fontFamily": {
+                        "caption": ["Inter", "sans-serif"],
+                        "body-lg": ["Inter", "sans-serif"],
+                        "label-md": ["Inter", "sans-serif"],
+                        "body-md": ["Inter", "sans-serif"],
+                        "headline-md": ["Montserrat", "sans-serif"],
+                        "display-lg": ["Montserrat", "sans-serif"],
+                        "headline-lg-mobile": ["Montserrat", "sans-serif"],
+                        "headline-lg": ["Montserrat", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased overflow-x-hidden">
+<!-- TopNavBar (Mobile Adapted) -->
+<header class="bg-background/80 backdrop-blur-xl border-b border-white/10 fixed top-0 w-full z-50 shadow-sm">
+<div class="flex justify-between items-center h-20 px-margin-mobile w-full">
+<div class="flex items-center gap-4">
+<button aria-label="Menu" class="text-on-surface hover:text-primary transition-colors duration-200">
+<span class="material-symbols-outlined text-2xl" data-icon="menu">menu</span>
+</button>
+<div class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight">
+                    Poker Advisor
+                </div>
+</div>
+<!-- Mobile Actions -->
+<div class="flex items-center gap-3">
+<button aria-label="Download App" class="md:hidden text-primary hover:text-primary-fixed transition-colors duration-200">
+<span class="material-symbols-outlined text-2xl fill" data-icon="download">download</span>
+</button>
+<button class="hidden md:flex bg-primary text-on-primary font-label-md text-label-md py-2 px-4 rounded-full hover:bg-primary-fixed transition-colors">
+                    Download App
+                </button>
+</div>
+</div>
+<!-- Hidden Desktop Nav for semantic completeness based on JSON, visually hidden on mobile -->
+<nav class="hidden">
+<ul>
+<li class="text-on-surface-variant font-body-md">Learn</li>
+<li class="text-on-surface-variant font-body-md">Hands</li>
+<li class="text-on-surface-variant font-body-md">Odds</li>
+<li class="text-primary font-bold border-b-2 border-primary pb-1">Strategy</li>
+<li class="text-on-surface-variant font-body-md">Tools</li>
+</ul>
+</nav>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-20 pb-stack-lg w-full max-w-lg mx-auto">
+<!-- Hero Image -->
+<div class="w-full h-64 bg-surface-container relative">
+<img alt="Texas Hold'em Table" class="w-full h-full object-cover" data-alt="A cinematic, low-key lighting shot of a professional poker table covered in rich dark green felt. Two face-down cards and crisp ceramic chips rest in the foreground. The background fades into a deep, sophisticated dark blue shadow with subtle neon green volumetric light accents, matching a modern fintech or premium educational aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmuo-sMzMqS5EBy4S1WaSXuLQ4dXp5CKpm3uLpzlan8hnVKP-8KWZo7sbdi6cJGCT45IHFqn8mcIXi2zmFnqvug_JwEjTFjNyNvI9NRHXzg6XVThGM-DXQMxTQUWrCswSl-FKQ7YqwQGl1e_wnkkApiBOnpzctHYfU4vIkxVD55D5stbyf4yMhkxsqxTwELJgs1kNRBjtlUne1fC6oaI-PU56kAppKuCRwf0pLENfGbEFt4HzIhic5nwhVabqvftigjTj6sz6z4XU"/>
+<!-- Subtle gradient overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+</div>
+<div class="px-margin-mobile -mt-8 relative z-10 space-y-stack-md">
+<!-- Breadcrumbs -->
+<div class="flex items-center gap-2 text-on-surface-variant font-caption text-caption uppercase tracking-wider">
+<span>Strategy</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
+<span class="text-primary">Beginner</span>
+</div>
+<!-- Title -->
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface">
+                Cómo jugar Texas Hold’em: Guía completa para principiantes
+            </h1>
+<!-- Metadata -->
+<div class="flex items-center gap-4 border-b border-white/10 pb-4">
+<div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden border border-white/10">
+<img alt="Author" class="w-full h-full object-cover" data-alt="A professional headshot of a young, analytical poker strategist wearing a sharp dark blazer over a simple t-shirt. The portrait has high-contrast studio lighting, a deep dark blue background, and conveys a calm, calculated authority, fitting a premium educational platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk_h8TVMFpyNinaYYzDSc7d5SHL3gKB1ZfxPArdM7nbbyc2QfWo5t-vSMkdoLUzTSGQZwPiRGobCt4xghjw976WSB012AOL-_XdNJUR2yIb1BUoO4KvS0yp1lAkZ2FRjqRkFrxUUv1L-wDFZ9TYENeLp4NDCrR4cU35nvt5zjscrM9L7zArN1QEeFT5WBVT9r49_xpfUGgIGoXdZC7dq_H7WRAYBexsBnR-fed8BSxn7HJwS5tCUYV6E1nXehvfDB4jD3Gkh9_rxs"/>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Elena R.</span>
+<span class="font-caption text-caption text-on-surface-variant">Oct 24 • 12 min read</span>
+</div>
+</div>
+<!-- Table of Contents (Collapsible) -->
+<details class="bg-surface-container rounded-lg border border-white/5 overflow-hidden group">
+<summary class="font-label-md text-label-md text-on-surface p-4 flex justify-between items-center cursor-pointer select-none bg-surface-container-high">
+                    Índice del Artículo
+                    <span class="material-symbols-outlined transition-transform duration-200 group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="p-4 space-y-3 bg-surface-container">
+<a class="block font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#rules">1. Reglas Básicas</a>
+<a class="block font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#hands">2. Ranking de Manos</a>
+<a class="block font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#betting">3. Rondas de Apuestas</a>
+</div>
+</details>
+<!-- Article Body -->
+<div class="space-y-stack-lg pt-4">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    El Texas Hold'em es la variante más popular del póker a nivel mundial. Ya sea que planees jugar en casa con amigos o en torneos competitivos, entender la estructura fundamental del juego es el primer paso hacia el éxito estratégico.
+                </p>
+<!-- H2 Section -->
+<div class="space-y-stack-md" id="rules">
+<h2 class="font-headline-md text-headline-md text-on-surface">Las Reglas Básicas</h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                        A cada jugador se le reparten dos cartas privadas (cartas ocultas) que le pertenecen exclusivamente. Posteriormente, se reparten cinco cartas comunitarias boca arriba en el "board". El objetivo es lograr la mejor mano de cinco cartas combinando tus cartas ocultas con las comunitarias.
+                    </p>
+</div>
+<!-- Pro Tip Card (Full Width) -->
+<div class="bg-surface rounded-xl border-t-2 border-primary p-6 shadow-sm relative overflow-hidden">
+<div class="absolute -right-4 -top-4 w-16 h-16 bg-primary/10 rounded-full blur-xl"></div>
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-primary fill" data-icon="lightbulb">lightbulb</span>
+<h3 class="font-label-md text-label-md text-primary uppercase tracking-wider">Consejo Pro</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        No te sientas obligado a jugar cada mano. La paciencia es crucial; los profesionales foldean la mayoría de sus manos iniciales esperando posiciones ventajosas.
+                    </p>
+</div>
+<!-- Card Comparison (Stacked for Mobile) -->
+<div class="space-y-stack-md" id="hands">
+<h2 class="font-headline-md text-headline-md text-on-surface">Mano Fuerte vs Mano Débil</h2>
+<div class="flex flex-col gap-4">
+<!-- Strong Hand -->
+<div class="bg-surface-container-high rounded-lg p-4 border border-primary/20 flex flex-col items-center gap-3">
+<span class="font-label-md text-label-md text-primary">Premium Hand (AA)</span>
+<div class="flex gap-2">
+<div class="w-12 h-16 bg-white rounded flex items-center justify-center text-error shadow-sm border border-gray-200">
+<span class="font-headline-md font-bold">A♥</span>
+</div>
+<div class="w-12 h-16 bg-white rounded flex items-center justify-center text-on-surface-variant shadow-sm border border-gray-200">
+<span class="font-headline-md font-bold text-black">A♠</span>
+</div>
+</div>
+<p class="font-caption text-caption text-on-surface-variant text-center">Juega agresivamente pre-flop.</p>
+</div>
+<!-- Weak Hand -->
+<div class="bg-surface-container-high rounded-lg p-4 border border-error/20 flex flex-col items-center gap-3">
+<span class="font-label-md text-label-md text-error">Weak Hand (72o)</span>
+<div class="flex gap-2 opacity-70">
+<div class="w-12 h-16 bg-white rounded flex items-center justify-center text-on-surface-variant shadow-sm border border-gray-200">
+<span class="font-headline-md font-bold text-black">7♣</span>
+</div>
+<div class="w-12 h-16 bg-white rounded flex items-center justify-center text-error shadow-sm border border-gray-200">
+<span class="font-headline-md font-bold">2♦</span>
+</div>
+</div>
+<p class="font-caption text-caption text-on-surface-variant text-center">Fold inmediato desde cualquier posición.</p>
+</div>
+</div>
+</div>
+<!-- Common Error Card (Full Width) -->
+<div class="bg-surface rounded-xl border-t-2 border-error p-6 shadow-sm relative overflow-hidden">
+<div class="absolute -right-4 -top-4 w-16 h-16 bg-error/10 rounded-full blur-xl"></div>
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-error fill" data-icon="warning">warning</span>
+<h3 class="font-label-md text-label-md text-error uppercase tracking-wider">Error Común</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        "Limpear" (igualar la ciega grande en lugar de subir) es un error de novatos. Si tu mano es lo suficientemente buena para jugar, generalmente es lo suficientemente buena para subir.
+                    </p>
+</div>
+<!-- Interactive CTA Button -->
+<div class="pt-4">
+<button class="w-full bg-primary text-on-primary font-label-md text-label-md py-4 rounded-xl flex items-center justify-center gap-2 hover:bg-primary-fixed transition-colors shadow-[0_0_15px_rgba(136,217,130,0.15)]">
+<span class="material-symbols-outlined" data-icon="casino">casino</span>
+                        Probar Simulador de Manos
+                    </button>
+</div>
+</div>
+</div>
+<!-- Sidebar Content Moved to Bottom (Mobile Flow) -->
+<div class="px-margin-mobile mt-stack-lg pt-stack-lg border-t border-white/5 space-y-stack-lg">
+<!-- Download App Promo -->
+<div class="bg-gradient-to-br from-surface-container to-surface-bright rounded-2xl p-6 border border-white/10 text-center relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full blur-2xl"></div>
+<span class="material-symbols-outlined text-4xl text-secondary mb-4" data-icon="rocket_launch">rocket_launch</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Eleva tu juego</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                    Descarga Poker Advisor para acceder a herramientas avanzadas y análisis en tiempo real.
+                </p>
+<button class="bg-secondary text-on-secondary font-label-md text-label-md py-3 px-8 rounded-full hover:bg-secondary-fixed transition-colors">
+                    Download App
+                </button>
+</div>
+<!-- Related Articles -->
+<div class="space-y-4">
+<h3 class="font-label-md text-label-md text-on-surface uppercase tracking-wider mb-4">Artículos Relacionados</h3>
+<a class="flex gap-4 items-center bg-surface-container rounded-lg p-3 border border-white/5 active:scale-[0.98] transition-transform" href="#">
+<div class="w-20 h-20 bg-surface-dim rounded flex-shrink-0">
+<img alt="Thumbnail" class="w-full h-full object-cover rounded" data-alt="A close-up shot of colorful casino chips neatly stacked beside a sleek digital tablet displaying complex data graphs. The lighting is moody and dark with soft green glowing highlights emphasizing the modern analytical approach to strategy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDa_QqQstvAlJqwdjhkSEVgmSX8c-g1FBaKBPkZKGot9iBRbOZDW9zDgHbDwpKz5ayUsp95nbxThhJ2bC6yQWvEho_rbDlIs-7p9fI7xXIsNSz4GfmH39pduGEsalO2P9bBJKRe9I52Ju75degNzeQyDo54zbKa-e7VgZPomo8q2--ebDh803VA8ZnQdn8cROu_L3W8a21y1RQLTdAjTkJHiJK8KlYqjq9HaZKL9v4yaZsYrkQetG2-AU4BAra0OrkdM4Q6lLhucr4"/>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface line-clamp-2">Estrategia Pre-Flop: Posición y Rango</h4>
+<p class="font-caption text-caption text-primary mt-1">Intermedio</p>
+</div>
+</a>
+<a class="flex gap-4 items-center bg-surface-container rounded-lg p-3 border border-white/5 active:scale-[0.98] transition-transform" href="#">
+<div class="w-20 h-20 bg-surface-dim rounded flex-shrink-0">
+<img alt="Thumbnail" class="w-full h-full object-cover rounded" data-alt="Abstract visualization of probability mathematics hovering above a poker table. Glowing green numbers and connecting lines form a high-tech web over blurred playing cards, set against a deep midnight blue background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHd1Njx9wMfTXFyDVzAKFsdNc3tpSkpmZKHtNe1UbPxp9QjyfgtNx_-OtIfSeOZBuYXN4ziFLQZhADDBdDgBdjrHVjk018IgZ96AHK7E_iHuNmIaxeCFVFwh7wa2jurZT-vv1uZzozCXkhbfvKhWKe4xbXlRivsxaNKJi4LsJmyjAjFt1peRiMamVFYXe1-0fVtJM-FYqNiAEcERLNPoBsRaHg0FQfN7mqKf1LlVT2CBNl4os5F4-sPVXLiDbd6CppxEhTUgwCFqg"/>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface line-clamp-2">Cálculo Rápido de Pot Odds</h4>
+<p class="font-caption text-caption text-secondary mt-1">Avanzado</p>
+</div>
+</a>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full py-stack-lg border-t border-white/10 mt-stack-lg">
+<div class="grid grid-cols-1 gap-gutter px-margin-mobile w-full">
+<div class="flex flex-col items-center md:items-start text-center md:text-left space-y-4">
+<div class="font-headline-md text-headline-md font-bold text-on-surface">
+                    Poker Advisor
+                </div>
+<p class="font-caption text-caption text-on-surface-variant max-w-xs">
+                    © 2024 Poker Advisor. Educational use only. No real money gambling involved.
+                </p>
+</div>
+<!-- Mobile Footer Links Grid -->
+<div class="grid grid-cols-2 gap-4 text-center mt-6">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary underline decoration-2 underline-offset-4 transition-opacity hover:opacity-80" href="#">About Us</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary underline decoration-2 underline-offset-4 transition-opacity hover:opacity-80" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary underline decoration-2 underline-offset-4 transition-opacity hover:opacity-80" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary underline decoration-2 underline-offset-4 transition-opacity hover:opacity-80" href="#">Responsible Play</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary underline decoration-2 underline-offset-4 transition-opacity hover:opacity-80" href="#">Contact</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary underline decoration-2 underline-offset-4 transition-opacity hover:opacity-80" href="#">FAQ</a>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Poker Advisor - Blog Educativo</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Montserrat:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#262a34",
+                        "on-tertiary-fixed-variant": "#00531e",
+                        "on-secondary-container": "#342800",
+                        "secondary-fixed": "#ffe088",
+                        "surface-container-low": "#181b25",
+                        "inverse-surface": "#dfe2ef",
+                        "on-primary-container": "#cbffc2",
+                        "tertiary-fixed": "#69ff87",
+                        "primary-container": "#2e7d32",
+                        "background": "#0f131c",
+                        "error-container": "#93000a",
+                        "on-secondary-fixed": "#241a00",
+                        "surface-variant": "#31353f",
+                        "tertiary": "#3ce36a",
+                        "tertiary-fixed-dim": "#3ce36a",
+                        "on-primary-fixed": "#002204",
+                        "on-surface-variant": "#bfcaba",
+                        "outline": "#8a9485",
+                        "on-tertiary-fixed": "#002108",
+                        "secondary-fixed-dim": "#e9c349",
+                        "on-surface": "#dfe2ef",
+                        "on-secondary": "#3c2f00",
+                        "on-tertiary-container": "#c7ffc7",
+                        "surface-tint": "#88d982",
+                        "on-secondary-fixed-variant": "#574500",
+                        "surface-dim": "#0f131c",
+                        "surface": "#0f131c",
+                        "on-error": "#690005",
+                        "surface-container-lowest": "#0a0e17",
+                        "surface-container": "#1c1f29",
+                        "error": "#ffb4ab",
+                        "on-error-container": "#ffdad6",
+                        "on-background": "#dfe2ef",
+                        "inverse-on-surface": "#2c303a",
+                        "primary-fixed-dim": "#88d982",
+                        "on-primary-fixed-variant": "#005312",
+                        "primary": "#88d982",
+                        "surface-container-highest": "#31353f",
+                        "primary-fixed": "#a3f69c",
+                        "secondary-container": "#af8d11",
+                        "on-tertiary": "#003912",
+                        "outline-variant": "#40493d",
+                        "tertiary-container": "#007f32",
+                        "surface-bright": "#353943",
+                        "secondary": "#e9c349",
+                        "on-primary": "#003909",
+                        "inverse-primary": "#1b6d24"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "48px",
+                        "stack-lg": "32px",
+                        "unit": "4px",
+                        "container-max": "1200px",
+                        "gutter": "24px",
+                        "stack-md": "16px",
+                        "margin-mobile": "20px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "display-lg": ["Montserrat"],
+                        "headline-lg": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Montserrat"],
+                        "caption": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(28, 31, 41, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .btn-primary {
+            background-color: #00c853;
+            color: #000000;
+        }
+        .btn-secondary {
+            background-color: transparent;
+            border: 1px solid #d4af37;
+            color: #d4af37;
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(136, 217, 130, 0.3);
+        }
+        .card-top-border {
+            border-top: 2px solid #88d982;
+        }
+        .card-top-border-gold {
+            border-top: 2px solid #e9c349;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col pt-20">
+<!-- TopNavBar -->
+<nav class="bg-background/80 backdrop-blur-xl fixed top-0 w-full z-50 border-b border-white/10 shadow-sm">
+<div class="flex justify-between items-center h-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight">
+                Poker Advisor
+            </div>
+<div class="hidden md:flex space-x-8 items-center">
+<!-- Using generic intent, none is strictly active, maybe "Learn" since it's the home/blog -->
+<a class="text-primary font-bold border-b-2 border-primary pb-1 text-label-md" href="#">Learn</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#">Hands</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#">Odds</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#">Strategy</a>
+<a class="text-on-surface-variant font-body-md hover:text-primary transition-colors duration-200" href="#">Tools</a>
+</div>
+<div class="flex items-center">
+<button class="bg-[#00c853] text-black font-label-md text-label-md px-6 py-2 rounded font-bold hover:bg-[#00e676] transition-colors">
+                    Download App
+                </button>
+</div>
+</div>
+</nav>
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="relative pt-32 pb-24 overflow-hidden">
+<div class="absolute inset-0 z-0 opacity-20" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAAAOjoZ8-_teW6s6IuPCnsVvFUzNwelbYkrIMFE_NPdlA4lxQIPOytaaOlADH_H1G7YN9P8P6Jz3A5GEDnQ3ATEdeirgFlSo3iA7seNQHM7hYsQ3WV4-W25_c05VLYVmROI6njr_T7VkoXztNu00tJ5iTbdcdzqwGNoBfBZVFwoOK1xg7rwW_UJpNdulYyIWjxdGZYGNJx9PV9dWhkKFZxAvUZNjyirwXexV80uNOYvy2IKFutZZowuzt6MESSOupHvaQ-r3HXuCc'); background-size: cover; background-position: center;"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-background/40 via-background/80 to-background z-0"></div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10 flex flex-col md:flex-row items-center gap-12">
+<div class="md:w-1/2 flex flex-col gap-6">
+<h1 class="font-display-lg text-display-lg text-on-surface text-glow leading-tight">
+                        Aprende póker desde cero y mejora tus decisiones
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                        Guías, probabilidades, estrategia básica y herramientas para practicar Texas Hold’em sin apostar dinero.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 mt-4">
+<button class="btn-primary font-label-md text-label-md font-bold px-8 py-3 rounded text-center transition-transform hover:scale-105">
+                            Empezar desde cero
+                        </button>
+<button class="btn-secondary font-label-md text-label-md font-bold px-8 py-3 rounded text-center transition-colors hover:bg-[#d4af37]/10">
+                            Descargar Poker Advisor
+                        </button>
+</div>
+</div>
+<div class="md:w-1/2 relative flex justify-center">
+<div class="relative w-full max-w-md">
+<!-- Decorative glow behind image -->
+<div class="absolute inset-0 bg-primary/20 blur-3xl rounded-full"></div>
+<img alt="Poker Advisor App Mockup" class="relative z-10 w-full h-auto drop-shadow-2xl transform -rotate-2 hover:rotate-0 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAv5cetQSdxPpBg-tusuORy_qB6r3dwNZ98KptfFTY0dQs-QFrW3Ao0Dh_PypfxUcEM8zOJm0M9q9G-3SeKSZjtOTnokSzfs4C3X3Gd4-AE8W9Q28FeXfGQ9-AuXIBI1PXy3aTfM-lcF9zkjKfcpy3nxuiO5x2dOBUOoIZ7sn6H4UGvPzWDkofjozi80TGVjxzqXAFOTBLG9rX5Rei-QNjncUccHGD97QpRRDk4-LF0hmO7ICqdmz3mSy4bvgUF88hKPskH9xiSEto"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Cards Section (Topics) -->
+<section class="py-20 bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Explora Nuestros Temas</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Domina cada aspecto del juego con nuestros recursos educativos estructurados.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="glass-panel rounded-xl p-8 card-top-border flex flex-col group hover:bg-surface-container transition-colors">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">school</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Learn</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">Fundamentos esenciales para principiantes. Reglas, dinámicas de mesa y conceptos clave.</p>
+<button class="text-primary font-label-md text-label-md flex items-center group-hover:underline w-fit">
+                            Ver guías <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+</button>
+</div>
+<!-- Card 2 -->
+<div class="glass-panel rounded-xl p-8 card-top-border flex flex-col group hover:bg-surface-container transition-colors">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">playing_cards</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Hands</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">Análisis profundo de rangos de manos iniciales y cómo jugarlas en diferentes posiciones.</p>
+<button class="text-primary font-label-md text-label-md flex items-center group-hover:underline w-fit">
+                            Ver guías <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+</button>
+</div>
+<!-- Card 3 -->
+<div class="glass-panel rounded-xl p-8 card-top-border flex flex-col group hover:bg-surface-container transition-colors">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">calculate</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Odds</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">Matemáticas del póker. Aprende a calcular pot odds, equity y expected value (EV).</p>
+<button class="text-primary font-label-md text-label-md flex items-center group-hover:underline w-fit">
+                            Ver guías <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+</button>
+</div>
+<!-- Card 4 -->
+<div class="glass-panel rounded-xl p-8 card-top-border flex flex-col group hover:bg-surface-container transition-colors">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">chess</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Strategy</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">Tácticas avanzadas post-flop, tamaños de apuesta, y juego contra diferentes perfiles.</p>
+<button class="text-primary font-label-md text-label-md flex items-center group-hover:underline w-fit">
+                            Ver guías <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+</button>
+</div>
+<!-- Card 5 -->
+<div class="glass-panel rounded-xl p-8 card-top-border flex flex-col group hover:bg-surface-container transition-colors">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Glossary</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">El lenguaje del juego. Diccionario completo de términos técnicos y jerga común.</p>
+<button class="text-primary font-label-md text-label-md flex items-center group-hover:underline w-fit">
+                            Ver guías <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+</button>
+</div>
+<!-- Card 6 -->
+<div class="glass-panel rounded-xl p-8 card-top-border-gold flex flex-col group hover:bg-surface-container transition-colors relative overflow-hidden">
+<div class="absolute top-0 right-0 bg-secondary text-on-secondary text-caption font-bold px-3 py-1 rounded-bl-lg z-10">PRO</div>
+<div class="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-secondary text-2xl" style="font-variation-settings: 'FILL' 1;">build</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Tools</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">Calculadoras interactivas y visualizadores de rangos para analizar tus manos.</p>
+<button class="text-secondary font-label-md text-label-md flex items-center group-hover:underline w-fit">
+                            Ver herramientas <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- "Empieza aquí" Section (Path) -->
+<section class="py-20 relative border-t border-white/5">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="mb-12">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Ruta para Principiantes</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Sigue este camino estructurado para construir una base sólida.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 relative">
+<!-- Connector Line (Desktop) -->
+<div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-white/10 -translate-y-1/2 z-0"></div>
+<!-- Step 1 -->
+<div class="relative z-10 glass-panel rounded-xl p-6 border border-white/10 hover:border-primary/50 transition-colors">
+<div class="w-8 h-8 rounded-full bg-primary text-black font-bold flex items-center justify-center mb-4 text-sm">1</div>
+<h4 class="font-headline-md text-headline-md text-on-surface text-lg mb-2">Reglas básicas</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Cómo se juega una mano de Texas Hold'em de principio a fin.</p>
+</div>
+<!-- Step 2 -->
+<div class="relative z-10 glass-panel rounded-xl p-6 border border-white/10 hover:border-primary/50 transition-colors">
+<div class="w-8 h-8 rounded-full bg-surface-variant text-on-surface font-bold flex items-center justify-center mb-4 text-sm">2</div>
+<h4 class="font-headline-md text-headline-md text-on-surface text-lg mb-2">Ranking de manos</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Qué combinación vence a cuál. El pilar fundamental de las decisiones.</p>
+</div>
+<!-- Step 3 -->
+<div class="relative z-10 glass-panel rounded-xl p-6 border border-white/10 hover:border-primary/50 transition-colors">
+<div class="w-8 h-8 rounded-full bg-surface-variant text-on-surface font-bold flex items-center justify-center mb-4 text-sm">3</div>
+<h4 class="font-headline-md text-headline-md text-on-surface text-lg mb-2">Probabilidades y outs</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Matemáticas simples para saber si vale la pena seguir en la mano.</p>
+</div>
+<!-- Step 4 -->
+<div class="relative z-10 glass-panel rounded-xl p-6 border border-[#d4af37]/30 bg-[#d4af37]/5 hover:bg-[#d4af37]/10 transition-colors">
+<div class="w-8 h-8 rounded-full bg-[#d4af37] text-black font-bold flex items-center justify-center mb-4 text-sm">4</div>
+<h4 class="font-headline-md text-headline-md text-[#d4af37] text-lg mb-2">Practica con Poker Advisor</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Aplica lo aprendido en escenarios simulados sin riesgo.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Articles -->
+<section class="py-20 bg-surface-container-low border-t border-white/5">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">Guías Recomendadas</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Lecturas esenciales para mejorar tu juego hoy.</p>
+</div>
+<a class="hidden md:flex text-primary font-label-md text-label-md items-center hover:underline" href="#">
+                        Ver todos los artículos <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Article 1 -->
+<article class="bg-surface rounded-xl overflow-hidden border border-white/5 hover:border-primary/30 transition-colors group flex flex-col">
+<div class="h-48 relative overflow-hidden bg-surface-container-high">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A macro shot of a green casino poker table felt with two hole cards, specifically the Ace of Spades and King of Spades, lying face up next to a stack of colorful casino chips. High contrast lighting highlighting the texture of the felt, dark moody background, cinematic and professional photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYUnCg93fH6T3S51awGDCnrPr5kVVcu9lkcXBntH4k_CPTM7jBJR1qRYmxgWeggZ5jpKXM-04MkG4vcNDOoxur8Qf0X__h-WwIURBoCYvGPoCPZupmSKRigZjIBj7SrQGFvaDKkpU_a497jt0B-hZNtLfg8BcfLD8VhXz16FgMXc9o5COtMXYH_Nn7ZIiQTzDInxHrCGFzYCScGTkAC6g5k9z9EHMh1T7NUGATYEG4IJjRM6evLDZjlilheX7vVdaRQIBoY2maFVU"/>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<div class="mb-3">
+<span class="bg-primary/20 text-primary px-2 py-1 rounded text-xs font-bold uppercase tracking-wider">Fundamentos</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface text-xl mb-3 group-hover:text-primary transition-colors">Texas Hold’em Paso a Paso</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mb-4 flex-grow">Guía exhaustiva sobre la estructura de ciegas, las calles de apuestas (Pre-flop, Flop, Turn, River) y el showdown.</p>
+<span class="text-on-surface-variant font-caption text-caption flex items-center">
+<span class="material-symbols-outlined text-sm mr-1">schedule</span> 10 min de lectura
+                            </span>
+</div>
+</article>
+<!-- Article 2 -->
+<article class="bg-surface rounded-xl overflow-hidden border border-white/5 hover:border-primary/30 transition-colors group flex flex-col">
+<div class="h-48 relative overflow-hidden bg-surface-container-high">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A clean, minimalist data visualization chart showing poker hand rankings on a dark background. The chart uses neon green bars and sleek typography to show probabilities of hitting different hands like straight flush or full house. Technical, financial-app aesthetic with glowing accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDb2J9v4OVbmTKYzDYCpOzJMKqQBMqG-AIXn6vVPOfn-pciCCabaniQpCMQSn7GlE30d0dZAiChkTL61RYvgYjZrGjle_eDrzm8cIBkiQtyxhuVNk7Yah6QJ2ygY07f8UjjVlRN0gFzvL781HgeVFBrtUCSBuURpRV6TZIgtJI_GWW1ZoEPJ-GV0YDxuSpf6NeTH_vPc5j8J6ZuXSsyOaP74EbgBR0kdYMOwaqGKURBAEUE3N11FNTamWY1-6Na-m966v-X2_8t-mw"/>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<div class="mb-3">
+<span class="bg-primary/20 text-primary px-2 py-1 rounded text-xs font-bold uppercase tracking-wider">Teoría</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface text-xl mb-3 group-hover:text-primary transition-colors">Ranking Oficial de Manos</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mb-4 flex-grow">No cometas el error de novato. Aprende exactamente el valor de cada mano y su frecuencia matemática.</p>
+<span class="text-on-surface-variant font-caption text-caption flex items-center">
+<span class="material-symbols-outlined text-sm mr-1">schedule</span> 5 min de lectura
+                            </span>
+</div>
+</article>
+<!-- Article 3 -->
+<article class="bg-surface rounded-xl overflow-hidden border border-white/5 hover:border-primary/30 transition-colors group flex flex-col">
+<div class="h-48 relative overflow-hidden bg-surface-container-high">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A professional looking calculator interface floating in dark space. Glowing green numbers and mathematical symbols represent calculating poker equity and pot odds. Sleek, glassmorphism design style, sharp details, analytical mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnyjPogou-UfU40_sY3hSUtaZ_paLeP6fgS8MunOtWHLOHJYtj-ilahOut6ZQboeRkmF7cd4XIr4RsYkFPelDiMrx8haTZAOjmq4NyID9-hs1ZEdVUdxlI0_laAjJvVaiGogMqEvbprwdfeccMnjv_lZD1Qdt2Jk94rwN45-jwhQxDdI5cIaaosL5-B3lwT3bKA9x30jc_dk3iPJOR-8i3lv3B11hXpUq7Meq1GgW7yguKhuInONqLOVElDRHMNHSJb5waCsxSjfw"/>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<div class="mb-3">
+<span class="bg-secondary/20 text-secondary px-2 py-1 rounded text-xs font-bold uppercase tracking-wider">Matemáticas</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface text-xl mb-3 group-hover:text-primary transition-colors">¿Qué son los 'Outs'?</h3>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm mb-4 flex-grow">Aprende a contar tus cartas salvadoras y usa la regla del 4 y del 2 para estimar tu equity rápidamente.</p>
+<span class="text-on-surface-variant font-caption text-caption flex items-center">
+<span class="material-symbols-outlined text-sm mr-1">schedule</span> 8 min de lectura
+                            </span>
+</div>
+</article>
+</div>
+<div class="mt-8 text-center md:hidden">
+<button class="btn-secondary w-full py-3 rounded font-label-md text-label-md font-bold">Ver todos los artículos</button>
+</div>
+</div>
+</section>
+<!-- App Promo Section -->
+<section class="py-24 relative overflow-hidden">
+<div class="absolute inset-0 bg-surface-container-highest z-0"></div>
+<!-- Decorative shader bg idea translated to static css gradient for safety, or we could use the placeholder if provided -->
+<div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/5 z-0"></div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+<div class="glass-panel rounded-2xl p-8 md:p-12 border border-white/10 flex flex-col md:flex-row items-center gap-12">
+<div class="md:w-1/2">
+<h2 class="font-display-lg text-display-lg text-on-surface mb-4">Practica con Poker Advisor</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">Lleva tu aprendizaje al siguiente nivel. Analiza manos, evalúa decisiones y mejora tu estrategia en un entorno seguro y analítico.</p>
+<ul class="space-y-4 mb-8">
+<li class="flex items-start">
+<span class="material-symbols-outlined text-primary mr-3 mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Calculadora de Equity en tiempo real</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-primary mr-3 mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Escenarios de entrenamiento personalizables</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-primary mr-3 mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Sin riesgo financiero, 100% educativo</span>
+</li>
+</ul>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-white text-black font-label-md text-label-md font-bold px-6 py-3 rounded flex items-center justify-center hover:bg-gray-200 transition-colors">
+<span class="material-symbols-outlined mr-2">apps</span> App Store
+                            </button>
+<button class="bg-white text-black font-label-md text-label-md font-bold px-6 py-3 rounded flex items-center justify-center hover:bg-gray-200 transition-colors">
+<span class="material-symbols-outlined mr-2">android</span> Google Play
+                            </button>
+</div>
+<p class="font-caption text-caption text-on-surface-variant/60 mt-6 italic">
+                            Poker Advisor es una herramienta educativa. No es una app de apuestas.
+                        </p>
+</div>
+<div class="md:w-1/2 flex justify-center">
+<!-- Reusing the app mockup for consistency or a different placeholder -->
+<img alt="Poker Advisor Analytics Screen" class="w-full max-w-sm drop-shadow-2xl opacity-90 hover:opacity-100 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAv5cetQSdxPpBg-tusuORy_qB6r3dwNZ98KptfFTY0dQs-QFrW3Ao0Dh_PypfxUcEM8zOJm0M9q9G-3SeKSZjtOTnokSzfs4C3X3Gd4-AE8W9Q28FeXfGQ9-AuXIBI1PXy3aTfM-lcF9zkjKfcpy3nxuiO5x2dOBUOoIZ7sn6H4UGvPzWDkofjozi80TGVjxzqXAFOTBLG9rX5Rei-QNjncUccHGD97QpRRDk4-LF0hmO7ICqdmz3mSy4bvgUF88hKPskH9xiSEto"/>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full py-stack-lg border-t border-white/10 flat no shadows">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Brand Column -->
+<div class="col-span-1 md:col-span-1 flex flex-col gap-4">
+<div class="font-headline-md text-headline-md font-bold text-on-surface">
+                    Poker Advisor
+                </div>
+<p class="font-caption text-caption text-on-surface-variant">
+                    © 2024 Poker Advisor. Educational use only. No real money gambling involved.
+                </p>
+</div>
+<!-- Links Columns (Distributing the 6 links) -->
+<div class="col-span-1 flex flex-col gap-3">
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-secondary underline decoration-2 underline-offset-4 hover:opacity-80 transition-all" href="#">About Us</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-secondary underline decoration-2 underline-offset-4 hover:opacity-80 transition-all" href="#">Terms of Service</a>
+</div>
+<div class="col-span-1 flex flex-col gap-3">
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-secondary underline decoration-2 underline-offset-4 hover:opacity-80 transition-all" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-secondary underline decoration-2 underline-offset-4 hover:opacity-80 transition-all" href="#">Responsible Play</a>
+</div>
+<div class="col-span-1 flex flex-col gap-3">
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-secondary underline decoration-2 underline-offset-4 hover:opacity-80 transition-all" href="#">Contact</a>
+<a class="text-on-surface-variant font-body-md text-body-md hover:text-secondary underline decoration-2 underline-offset-4 hover:opacity-80 transition-all" href="#">FAQ</a>
+</div>
+</div>
+</footer>
+</body></html>
