@@ -249,6 +249,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               )}
             </section>
 
+            <AdBanner />
             <FAQSection items={post.faq} />
 
             {post.appPromotion && (

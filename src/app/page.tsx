@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BookOpen, Calculator, ListChecks, Search, Smartphone, BookOpenCheck, Swords, Wrench, Check } from "lucide-react";
 
-import { AdBanner } from "@/components/AdBanner";
 import { AppPromo } from "@/components/AppPromo";
 import { ArticleCard } from "@/components/ArticleCard";
 import { CategoryCard } from "@/components/CategoryCard";
@@ -338,8 +337,6 @@ export default function HomePage() {
             })()}
           </div>
         </section>
-
-        <AdBanner />
 
         <section className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] items-center">
           <div>
