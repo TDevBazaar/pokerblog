@@ -19,10 +19,10 @@ const COLORES = {
   fold: "border-red-500/30 bg-red-500/10 text-red-400",
 };
 
-const TRADUCCION: Record<string, string> = {
-  raise: "Sube",
-  call: "Iguala",
-  fold: "Retírate",
+const NOMBRES: Record<string, string> = {
+  raise: "Raise",
+  call: "Call",
+  fold: "Fold",
 };
 
 export function SugerenciaAccion({ sugerencia }: Props) {
@@ -37,7 +37,7 @@ export function SugerenciaAccion({ sugerencia }: Props) {
         </span>
         <div>
           <p className="text-base font-bold md:text-lg">
-            {TRADUCCION[sugerencia.accion]}
+            {NOMBRES[sugerencia.accion]}
             {sugerencia.cantidad && (
               <span className="ml-1 text-xs font-normal opacity-80 md:ml-2 md:text-sm">
                 {sugerencia.cantidad}

@@ -25,10 +25,10 @@ export function sugerirAccion(
   if (equity > umbral.raise) {
     return {
       accion: "raise",
-      cantidad: equity > 65 ? "2/3 del bote" : "1/2 del bote",
+      cantidad: equity > 65 ? "2/3 pot" : "1/2 pot",
       explicacion: tardia
-        ? "Mano fuerte desde posición tardía. Sube para construir el bote."
-        : "Mano dominante. Sube fuerte desde esta posición.",
+        ? "Strong hand from late position. Raise to build the pot."
+        : "Dominant hand. Raise strongly from this position.",
     };
   }
 
@@ -36,14 +36,14 @@ export function sugerirAccion(
     if (tardia) {
       return {
         accion: tardia && equity > umbral.raise - 10 ? "raise" : "call",
-        cantidad: "1/3 del bote",
-        explicacion: "Equidad suficiente desde posición tardía. Juega la mano.",
+        cantidad: "1/3 pot",
+        explicacion: "Enough equity from late position. Play the hand.",
       };
     }
     return {
       accion: "call",
       explicacion:
-        "Equidad moderada. Iguala y evalúa en la siguiente calle.",
+        "Moderate equity. Call and evaluate on the next street.",
     };
   }
 
@@ -51,13 +51,13 @@ export function sugerirAccion(
     return {
       accion: "call",
       explicacion:
-        "Equidad baja pero desde posición tardía puedes igualar si no hay subida grande.",
+        "Low equity but from late position you can call if there's no big raise.",
     };
   }
 
   return {
     accion: "fold",
     explicacion:
-      "Equidad muy baja. No vale la pena continuar con esta mano.",
+      "Very low equity. Not worth continuing with this hand.",
   };
 }
