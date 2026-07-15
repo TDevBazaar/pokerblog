@@ -6,5 +6,5 @@ import { buildCategoryMetadata } from "@/lib/metadata";
 export const metadata: Metadata = buildCategoryMetadata("manos-de-poker");
 
 export default function ManosDePokerPage() {
-  return <CategoryLanding slug="manos-de-poker" showHandRanking showQuickAnswers />;
+  return <CategoryLanding slug="manos-de-poker" showHandRanking />;
 }
