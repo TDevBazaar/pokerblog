@@ -1,11 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { AdBanner } from "@/components/AdBanner";
 import { siteConfig } from "@/data/site";
 
 export function Footer() {
   return (
     <footer className="border-t border-white/10 bg-night">
+      <AdBanner />
       <div className="section-shell grid gap-10 py-12 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
           <Link className="inline-flex items-center gap-3" href="/">

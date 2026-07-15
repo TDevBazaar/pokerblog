@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, CalendarDays, Clock, Gamepad2 } from "lucide-react";
 
+import { AdBanner } from "@/components/AdBanner";
 import { AppPromo } from "@/components/AppPromo";
 import { ArticleCard } from "@/components/ArticleCard";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -274,6 +275,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
 
           <div className="lg:sticky lg:top-28 lg:self-start">
+            <AdBanner />
             <TableOfContents items={post.tableOfContents} />
           </div>
         </Container>
