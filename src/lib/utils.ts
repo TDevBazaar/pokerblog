@@ -79,13 +79,14 @@ export function getNextLearningStep(slug: string) {
   if (nextPostInCategory) {
     return {
       type: "post" as const,
-      eyebrow: "Siguiente guía en esta sección",
+      eyebrowKey: "learningStep.nextGuide.eyebrow",
       title: nextPostInCategory.title,
       description: nextPostInCategory.excerpt,
       href: `/blog/${nextPostInCategory.slug}`,
-      badge: nextPostInCategory.category,
-      meta: `${nextPostInCategory.readingTime} min de lectura`,
-      buttonLabel: "Continuar guía",
+      badgeLabel: nextPostInCategory.category,
+      metaKey: "learningStep.nextGuide.meta",
+      readingTime: nextPostInCategory.readingTime,
+      buttonLabelKey: "learningStep.nextGuide.button",
     };
   }
 
@@ -97,25 +98,24 @@ export function getNextLearningStep(slug: string) {
   if (nextCategory) {
     return {
       type: "category" as const,
-      eyebrow: "Siguiente sección de aprendizaje",
+      eyebrowKey: "learningStep.nextCategory.eyebrow",
       title: nextCategory.title,
       description: nextCategory.description,
       href: nextCategory.href,
-      badge: "Nueva sección",
-      meta: "Ver presentación",
-      buttonLabel: "Abrir sección",
+      badgeLabelKey: "learningStep.nextCategory.badge",
+      metaKey: "learningStep.nextCategory.meta",
+      buttonLabelKey: "learningStep.nextCategory.button",
     };
   }
 
   return {
     type: "app" as const,
-    eyebrow: "Ruta inicial completada",
-    title: "Practica lo aprendido con Proker Simulator",
-    description:
-      "Llegaste al final de la ruta editorial inicial. Ahora puedes practicar decisiones con simulaciones educativas.",
+    eyebrowKey: "learningStep.app.eyebrow",
+    titleKey: "learningStep.app.title",
+    descriptionKey: "learningStep.app.description",
     href: "/app/proker-simulator",
-    badge: "App educativa",
-    meta: "Sin apuestas ni dinero real",
-    buttonLabel: "Ir a Proker Simulator",
+    badgeLabelKey: "learningStep.app.badge",
+    metaKey: "learningStep.app.meta",
+    buttonLabelKey: "learningStep.app.button",
   };
 }

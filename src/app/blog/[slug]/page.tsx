@@ -204,20 +204,36 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               {nextLearningStep ? (
                 <>
                   <p className="text-sm font-semibold text-gold">
-                    {nextLearningStep.eyebrow}
+                    <T k={nextLearningStep.eyebrowKey} />
                   </p>
                   <h2 className="mt-3 font-display text-2xl font-bold text-white">
-                    {nextLearningStep.title}
+                    {"titleKey" in nextLearningStep ? (
+                      <T k={(nextLearningStep as { titleKey: string }).titleKey} />
+                    ) : (
+                      nextLearningStep.title
+                    )}
                   </h2>
                   <p className="mt-3 text-sm leading-7 text-muted">
-                    {nextLearningStep.description}
+                    {"descriptionKey" in nextLearningStep ? (
+                      <T k={(nextLearningStep as { descriptionKey: string }).descriptionKey} />
+                    ) : (
+                      nextLearningStep.description
+                    )}
                   </p>
                   <div className="mt-4 flex flex-wrap gap-3 text-xs font-semibold text-muted">
                     <span className="rounded bg-poker/10 px-3 py-1 text-poker">
-                      {nextLearningStep.badge}
+                      {"badgeLabelKey" in nextLearningStep ? (
+                        <T k={(nextLearningStep as { badgeLabelKey: string }).badgeLabelKey} />
+                    ) : (
+                      (nextLearningStep as { badgeLabel: string }).badgeLabel
+                    )}
                     </span>
                     <span className="rounded bg-white/10 px-3 py-1">
-                      {nextLearningStep.meta}
+                      {nextLearningStep.type === "post" ? (
+                        <T k="learningStep.nextGuide.meta" params={{ minutes: nextLearningStep.readingTime }} />
+                      ) : (
+                        <T k={(nextLearningStep as { metaKey: string }).metaKey} />
+                      )}
                     </span>
                   </div>
                   <ButtonLink
@@ -225,7 +241,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                     href={nextLearningStep.href}
                     icon={<ArrowRight className="h-4 w-4" aria-hidden="true" />}
                   >
-                    {nextLearningStep.buttonLabel}
+                    <T k={nextLearningStep.buttonLabelKey} />
                   </ButtonLink>
                 </>
               ) : (
