@@ -181,7 +181,7 @@ export function MesaDePoker({
       <div className="absolute inset-[12%] rounded-[50%] border border-white/5 bg-[#1f4a1f]" />
 
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className="flex gap-1 md:gap-1.5">
+        <div className="flex gap-1 md:gap-1.5 max-md:-mt-20">
           {Array.from({ length: 5 }).map((_, i) => {
             const carta = comunitarias[i];
             if (carta) {

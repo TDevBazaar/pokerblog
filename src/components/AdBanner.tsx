@@ -25,22 +25,37 @@ export function AdBanner() {
       "https://pl30377735.effectivecpmnetwork.com/d3dfe9a2f9dda76275a463faba9ee793/invoke.js";
     document.body.appendChild(script);
 
-    const poll = setInterval(() => {
+    const observer = new MutationObserver(() => {
       const container = containerRef.current;
       if (!container || !container.children.length) return;
 
       const kids = container.children;
+
       if (kids.length === 1 && kids[0].children.length > 1) {
-        forceGrid(kids[0] as HTMLElement);
+        const wrapper = kids[0] as HTMLElement;
+        const items = Array.from(wrapper.children);
+
+        // Unwrap: move ad children directly into the grid container
+        for (const item of items) {
+          container.appendChild(item);
+        }
+        wrapper.remove();
+        forceGrid(container);
       } else if (kids.length > 1) {
         forceGrid(container);
       }
-      clearInterval(poll);
-    }, 200);
+    });
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current, {
+        childList: true,
+        subtree: true,
+      });
+    }
 
     return () => {
       script.remove();
-      clearInterval(poll);
+      observer.disconnect();
     };
   }, []);
 
