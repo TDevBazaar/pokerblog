@@ -2,8 +2,11 @@
 
 import { useEffect, useRef } from "react";
 
+const CONTAINER_ID = "container-d3dfe9a2f9dda76275a463faba9ee793";
+
 export function AdBanner() {
   const mounted = useRef(false);
+  const elRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (mounted.current) return;
@@ -23,7 +26,11 @@ export function AdBanner() {
 
   return (
     <div className="my-6 flex justify-center">
-      <div id="container-d3dfe9a2f9dda76275a463faba9ee793" />
+      <div
+        ref={elRef}
+        id={CONTAINER_ID}
+        className="grid w-full grid-cols-2 gap-3 sm:gap-4"
+      />
     </div>
   );
 }
