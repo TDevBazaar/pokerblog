@@ -1,18 +1,23 @@
+"use client";
+
 import type { FAQItem } from "@/types/content";
+import { useLanguage } from "@/i18n";
 
 type FAQSectionProps = {
   items?: FAQItem[];
   title?: string;
 };
 
-export function FAQSection({ items, title = "Preguntas frecuentes" }: FAQSectionProps) {
+export function FAQSection({ items, title }: FAQSectionProps) {
+  const { t } = useLanguage();
+  const heading = title ?? t("faq.title");
   if (!items?.length) {
     return null;
   }
 
   return (
     <section className="mt-12">
-      <h2 className="font-display text-2xl font-bold text-white">{title}</h2>
+      <h2 className="font-display text-2xl font-bold text-white">{heading}</h2>
       <div className="mt-6 grid gap-4">
         {items.map((item) => (
           <details

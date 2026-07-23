@@ -1,4 +1,7 @@
+"use client";
+
 import { handRankings } from "@/data/handRankings";
+import { useLanguage } from "@/i18n";
 import type { CardSuit, PlayingCard } from "@/types/content";
 
 const suitSymbols: Record<CardSuit, string> = {
@@ -8,14 +11,14 @@ const suitSymbols: Record<CardSuit, string> = {
   clubs: "♣",
 };
 
-const suitLabels: Record<CardSuit, string> = {
-  spades: "picas",
-  hearts: "corazones",
-  diamonds: "diamantes",
-  clubs: "tréboles",
-};
-
 function CardExample({ cards }: { cards: PlayingCard[] }) {
+  const { t } = useLanguage();
+  const suitLabels: Record<CardSuit, string> = {
+    spades: t("handRanking.suit.spades"),
+    hearts: t("handRanking.suit.hearts"),
+    diamonds: t("handRanking.suit.diamonds"),
+    clubs: t("handRanking.suit.clubs"),
+  };
   return (
     <div
       className="flex min-w-[13rem] gap-1.5"
@@ -49,24 +52,25 @@ function PlayingCardView({ card }: { card: PlayingCard }) {
 }
 
 export function HandRankingTable() {
+  const { t } = useLanguage();
   return (
     <div className="surface-card overflow-hidden">
       <div className="border-b border-white/10 p-5">
         <h2 className="font-display text-2xl font-bold text-white">
-          Ranking de manos de póker
+          {t("handRanking.title")}
         </h2>
         <p className="mt-2 text-sm leading-6 text-muted">
-          Orden de mayor a menor fuerza en Texas Hold’em.
+          {t("handRanking.description")}
         </p>
       </div>
       <div className="overflow-x-auto">
         <table className="min-w-full divide-y divide-white/10">
           <thead className="bg-white/5">
             <tr>
-              <th className="px-5 py-3 text-left text-sm font-semibold text-poker">#</th>
-              <th className="px-5 py-3 text-left text-sm font-semibold text-poker">Mano</th>
-              <th className="px-5 py-3 text-left text-sm font-semibold text-poker">Ejemplo</th>
-              <th className="px-5 py-3 text-left text-sm font-semibold text-poker">Descripción</th>
+              <th className="px-5 py-3 text-left text-sm font-semibold text-poker">{t("handRanking.col.rank")}</th>
+              <th className="px-5 py-3 text-left text-sm font-semibold text-poker">{t("handRanking.col.hand")}</th>
+              <th className="px-5 py-3 text-left text-sm font-semibold text-poker">{t("handRanking.col.example")}</th>
+              <th className="px-5 py-3 text-left text-sm font-semibold text-poker">{t("handRanking.col.description")}</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-white/10">

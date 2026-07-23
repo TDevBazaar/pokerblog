@@ -6,21 +6,24 @@ import { Search } from "lucide-react";
 import type { GlossaryTerm } from "@/types/content";
 import { cn } from "@/lib/utils";
 
+import { useLanguage } from "@/i18n";
+
 type GlossaryGridProps = {
   terms: GlossaryTerm[];
 };
 
-const letters = ["Todos", "A", "B", "C", "D", "F", "G", "H", "K", "L", "N", "O", "P", "R", "S", "T", "U", "V"];
-
 export function GlossaryGrid({ terms }: GlossaryGridProps) {
+  const { t } = useLanguage();
   const [query, setQuery] = useState("");
-  const [letter, setLetter] = useState("Todos");
+  const allLabel = t("glossary.all");
+  const [letter, setLetter] = useState(allLabel);
+  const letters = [allLabel, "A", "B", "C", "D", "F", "G", "H", "K", "L", "N", "O", "P", "R", "S", "T", "U", "V"];
 
   const filteredTerms = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
 
     return terms.filter((term) => {
-      const matchesLetter = letter === "Todos" || term.term.toUpperCase().startsWith(letter);
+      const matchesLetter = letter === allLabel || term.term.toUpperCase().startsWith(letter);
       const matchesQuery =
         !normalizedQuery ||
         term.term.toLowerCase().includes(normalizedQuery) ||
@@ -34,19 +37,19 @@ export function GlossaryGrid({ terms }: GlossaryGridProps) {
     <div className="grid gap-8">
       <div className="surface-card p-5">
         <label className="text-sm font-semibold text-white" htmlFor="glossary-search">
-          Buscar término
+          {t("glossary.search")}
         </label>
         <div className="mt-3 flex items-center gap-3 rounded border border-white/10 bg-night px-4">
           <Search className="h-4 w-4 text-muted" aria-hidden="true" />
           <input
             id="glossary-search"
             className="min-h-12 flex-1 bg-transparent text-sm text-white placeholder:text-muted focus:outline-none"
-            placeholder="Ejemplo: kicker, fold, pot odds..."
+            placeholder={t("glossary.placeholder")}
             value={query}
             onChange={(event) => setQuery(event.target.value)}
           />
         </div>
-        <div className="mt-4 flex flex-wrap gap-2" aria-label="Filtro alfabético">
+        <div className="mt-4 flex flex-wrap gap-2" aria-label={t("glossary.filter")}>
           {letters.map((item) => (
             <button
               key={item}

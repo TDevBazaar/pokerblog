@@ -1,9 +1,12 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, CalendarDays, Clock } from "lucide-react";
 
 import type { BlogPost } from "@/types/content";
 import { formatDate, cn } from "@/lib/utils";
+import { useLanguage } from "@/i18n";
 
 const categoryImages: Record<string, string> = {
   "aprende-poker": "/images/categories/aprende-poker.png",
@@ -51,6 +54,7 @@ type ArticleCardProps = {
 };
 
 export function ArticleCard({ post }: ArticleCardProps) {
+  const { t } = useLanguage();
   const art = articleArt[post.categorySlug] ?? fallbackArt;
   const imageSrc = categoryImages[post.categorySlug] ?? fallbackImage;
 
@@ -100,7 +104,7 @@ export function ArticleCard({ post }: ArticleCardProps) {
           <div className="mt-4 flex flex-wrap gap-2 text-[10px] font-semibold text-muted">
             <span className="inline-flex items-center gap-1.5 rounded-md bg-night/75 border border-white/5 px-2.5 py-1 backdrop-blur-sm">
               <Clock className="h-3 w-3 text-poker" aria-hidden="true" />
-              {post.readingTime} min
+              {t("article.readingTime", { n: post.readingTime })}
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-md bg-night/75 border border-white/5 px-2.5 py-1 backdrop-blur-sm">
               <CalendarDays className="h-3 w-3 text-poker" aria-hidden="true" />
@@ -109,7 +113,7 @@ export function ArticleCard({ post }: ArticleCardProps) {
           </div>
 
           <span className="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-poker">
-            Leer guía
+            {t("article.readGuide")}
             <ArrowRight className="h-3.5 w-3.5 transition group-hover:translate-x-1" aria-hidden="true" />
           </span>
         </div>

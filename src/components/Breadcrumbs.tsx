@@ -1,19 +1,23 @@
+"use client";
+
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 
 import type { BreadcrumbItem } from "@/types/content";
+import { useLanguage } from "@/i18n";
 
 type BreadcrumbsProps = {
   items: BreadcrumbItem[];
 };
 
 export function Breadcrumbs({ items }: BreadcrumbsProps) {
+  const { t } = useLanguage();
   return (
     <nav className="text-sm text-muted" aria-label="Breadcrumb">
       <ol className="flex flex-wrap items-center gap-2">
         <li>
           <Link className="hover:text-poker" href="/">
-            Inicio
+            {t("breadcrumbs.home")}
           </Link>
         </li>
         {items.map((item) => (

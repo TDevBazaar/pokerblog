@@ -4,6 +4,7 @@ import { Fragment, useMemo, useState } from "react";
 import { CartaVisual } from "./CartaVisual";
 import { PosicionMesa } from "./PosicionMesa";
 import { PALO_A_SIMBOLO, PALO_TO_COLOR, RANGO_A_LETRA } from "./lib/mazo";
+import { useLanguage } from "@/i18n";
 import type { Carta, Palo, Posicion, Rango, TipoJugador } from "./lib/types";
 
 type AsientoData = {
@@ -154,6 +155,7 @@ export function MesaDePoker({
   onChangeTipo,
   numOponentes,
 }: Props) {
+  const { t } = useLanguage();
   const [popupAbierto, setPopupAbierto] = useState<"jugador" | "comunidad" | null>(null);
 
   const todasOcupadas = useMemo(
@@ -227,12 +229,12 @@ export function MesaDePoker({
                 }`}
               >
                 {ronda === "preflop"
-                  ? "Preflop"
+                  ? t("simulator.phase.pflopShort")
                   : ronda === "flop"
-                    ? "Flop"
+                    ? t("simulator.phase.flopShort")
                     : ronda === "turn"
-                      ? "Turn"
-                      : "River"}
+                      ? t("simulator.phase.turnShort")
+                      : t("simulator.phase.riverShort")}
               </span>
             </div>
           );
@@ -308,7 +310,7 @@ export function MesaDePoker({
               )}
 
               {esPlayer && (
-                <span className="text-[9px] font-bold text-amber-400">TÚ</span>
+                <span className="text-[9px] font-bold text-amber-400">{t("simulator.youTag")}</span>
               )}
             </button>
 
@@ -321,13 +323,13 @@ export function MesaDePoker({
                 }
                 className="mt-0.5 rounded border border-white/10 bg-black/40 px-1.5 py-0.5 text-[9px] text-white outline-none focus:border-poker"
               >
-                <option value="TAG" className="bg-night text-white">TAG</option>
-                <option value="LAG" className="bg-night text-white">LAG</option>
+                <option value="TAG" className="bg-night text-white">{t("simulator.typeTAGShort")}</option>
+                <option value="LAG" className="bg-night text-white">{t("simulator.typeLAGShort")}</option>
                 <option value="TightPasivo" className="bg-night text-white">
-                  Tight-P
+                  {t("simulator.typeTightPShort")}
                 </option>
                 <option value="LoosePasivo" className="bg-night text-white">
-                  Loose-P
+                  {t("simulator.typeLoosePShort")}
                 </option>
               </select>
             )}
@@ -346,8 +348,8 @@ export function MesaDePoker({
           >
             <p className="mb-2 text-center text-sm font-semibold text-white md:mb-3 md:text-base">
               {popupAbierto === "jugador"
-                ? "Selecciona tu carta"
-                : "Selecciona una carta comunitaria"}
+                ? t("simulator.popup.selectYourCard")
+                : t("simulator.popup.selectCommunity")}
             </p>
             <MiniGrid
               ocupadas={todasOcupadas}
@@ -365,7 +367,7 @@ export function MesaDePoker({
               onClick={() => setPopupAbierto(null)}
               className="mt-3 w-full text-center text-xs text-muted hover:text-white"
             >
-              Cancelar
+              {t("simulator.cancel")}
             </button>
           </div>
         </div>

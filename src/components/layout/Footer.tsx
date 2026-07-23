@@ -1,10 +1,14 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
 import { AdBanner } from "@/components/AdBanner";
 import { siteConfig } from "@/data/site";
+import { useLanguage } from "@/i18n";
 
 export function Footer() {
+  const { t } = useLanguage();
   return (
     <footer className="border-t border-white/10 bg-night">
       <AdBanner />
@@ -21,7 +25,7 @@ export function Footer() {
             <span className="font-display text-lg font-bold text-white">Proker Simulator</span>
           </Link>
           <p className="mt-4 max-w-md text-sm leading-6 text-muted">
-            Blog educativo para aprender reglas, manos, probabilidades y estrategia de Texas Hold’em con enfoque responsable.
+            {t("footer.description")}
           </p>
           <p className="mt-5 rounded border border-gold/30 bg-gold/10 p-4 text-sm leading-6 text-gold">
             {siteConfig.legalNotice}
@@ -29,7 +33,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h2 className="text-sm font-semibold text-white">Enlaces principales</h2>
+          <h2 className="text-sm font-semibold text-white">{t("footer.linksTitle")}</h2>
           <ul className="mt-4 grid gap-3 text-sm text-muted">
             {siteConfig.navLinks.map((link) => (
               <li key={link.href}>
@@ -42,7 +46,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h2 className="text-sm font-semibold text-white">Legal</h2>
+          <h2 className="text-sm font-semibold text-white">{t("footer.legalTitle")}</h2>
           <ul className="mt-4 grid gap-3 text-sm text-muted">
             {siteConfig.legalLinks.map((link) => (
               <li key={link.label}>
@@ -53,7 +57,7 @@ export function Footer() {
             ))}
           </ul>
           <p className="mt-6 text-xs leading-5 text-muted/80">
-            Proker Simulator no permite jugar con dinero real y no garantiza ganancias.
+            {t("footer.disclaimer")}
           </p>
         </div>
       </div>

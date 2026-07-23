@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BookOpen, Calculator, ListChecks, Search, Smartphone, BookOpenCheck, Swords, Wrench, Check } from "lucide-react";
 
+import { T } from "@/components/T";
 import { AppPromo } from "@/components/AppPromo";
 import { ArticleCard } from "@/components/ArticleCard";
 import { CategoryCard } from "@/components/CategoryCard";
@@ -117,9 +118,9 @@ export default function HomePage() {
       <Container className="grid gap-16 py-16">
         <section>
           <SectionHeader
-            eyebrow="Explora"
-            title="Categorías principales"
-            description="Una ruta ordenada para aprender desde reglas básicas hasta toma de decisiones."
+            eyebrow={<T k="home.section.explore" />}
+            title={<T k="home.section.categories" />}
+            description={<T k="home.section.categoriesDesc" />}
             align="center"
           />
           <div className="mt-8 grid auto-rows-[16rem] gap-5 md:grid-cols-3">
@@ -135,9 +136,9 @@ export default function HomePage() {
 
         <section className="relative overflow-hidden">
           <SectionHeader
-            eyebrow="Sigue la ruta"
-            title="Roadmap de aprendizaje"
-            description="12 temas clave en orden progresivo. Marca tu avance paso a paso."
+            eyebrow={<T k="home.section.roadmap" />}
+            title={<T k="home.section.roadmapTitle" />}
+            description={<T k="home.section.roadmapDesc" />}
           />
 
           {/* Desktop snake layout */}
@@ -248,7 +249,7 @@ export default function HomePage() {
                                 </div>
                                 <div className="flex-1 min-w-0">
                                   <span className="text-[10px] font-bold tracking-wider text-gold/70">
-                                    PASO {String(item.number).padStart(2, "0")}
+                                  <T k="home.section.roadmapStep" /> {String(item.number).padStart(2, "0")}
                                   </span>
                                   <h3 className="mt-0.5 text-sm font-bold text-white leading-tight transition-colors group-hover:text-poker">
                                     {item.title}
@@ -310,7 +311,7 @@ export default function HomePage() {
                                   <Icon className="h-4 w-4 text-poker shrink-0" />
                                 </span>
                                 <span className="text-[9px] font-bold tracking-wider text-gold/60">
-                                  PASO {String(step.number).padStart(2, "0")}
+                                  <T k="home.section.roadmapStep" /> {String(step.number).padStart(2, "0")}
                                 </span>
                               </div>
                               <h3 className="mt-0.5 text-xs font-bold text-white leading-tight transition-colors group-hover:text-poker">
@@ -341,20 +342,20 @@ export default function HomePage() {
         <section className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] items-center">
           <div>
             <SectionHeader
-              eyebrow="Probabilidades"
-              title="Matemática práctica"
-              description="Aprende outs, pot odds y cálculos rápidos sin convertir el estudio en una clase pesada."
+              eyebrow={<T k="home.section.probabilities" />}
+              title={<T k="home.section.probabilitiesTitle" />}
+              description={<T k="home.section.probabilitiesDesc" />}
             />
             {/* Interactive Outs/Odds HUD display */}
             <div className="mt-6 rounded-xl border border-white/10 bg-panel/35 p-5 backdrop-blur-md shadow-lg">
               <div className="flex items-center justify-between border-b border-white/5 pb-3">
-                <span className="text-xs font-bold uppercase tracking-wider text-cyan-400">Ejemplo de Outs en Flop</span>
-                <span className="rounded-full bg-cyan-500/10 px-2.5 py-0.5 text-[10px] font-bold text-cyan-400">Proyecto de Color</span>
+                <span className="text-xs font-bold uppercase tracking-wider text-cyan-400"><T k="home.odds.exampleTitle" /></span>
+                <span className="rounded-full bg-cyan-500/10 px-2.5 py-0.5 text-[10px] font-bold text-cyan-400"><T k="home.odds.exampleBadge" /></span>
               </div>
               
               <div className="mt-4 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                 <div>
-                  <p className="text-[9px] font-bold uppercase tracking-widest text-muted">Tus Cartas</p>
+                  <p className="text-[9px] font-bold uppercase tracking-widest text-muted"><T k="home.odds.yourCards" /></p>
                   <div className="mt-1.5 flex gap-2">
                     <span className="flex h-12 w-9 flex-col justify-between rounded border border-white/30 bg-white p-1 text-neutral-900 shadow">
                       <span className="text-xs font-bold leading-none">A</span>
@@ -368,7 +369,7 @@ export default function HomePage() {
                 </div>
 
                 <div>
-                  <p className="text-[9px] font-bold uppercase tracking-widest text-muted">Mesa Común</p>
+                  <p className="text-[9px] font-bold uppercase tracking-widest text-muted"><T k="home.odds.community" /></p>
                   <div className="mt-1.5 flex gap-1.5">
                     <span className="flex h-12 w-9 flex-col justify-between rounded border border-white/30 bg-white p-1 text-neutral-900 shadow">
                       <span className="text-xs font-bold leading-none">J</span>
@@ -394,11 +395,11 @@ export default function HomePage() {
 
               <div className="mt-5 grid grid-cols-2 gap-3 border-t border-white/5 pt-4">
                 <div className="rounded-lg bg-night/50 p-2.5 text-center border border-white/5">
-                  <p className="text-[9px] font-bold uppercase tracking-wider text-muted">Outs (Tréboles)</p>
+                  <p className="text-[9px] font-bold uppercase tracking-wider text-muted"><T k="home.odds.outs" /></p>
                   <p className="mt-0.5 text-lg font-bold text-white">9</p>
                 </div>
                 <div className="rounded-lg bg-night/50 p-2.5 text-center border border-white/5">
-                  <p className="text-[9px] font-bold uppercase tracking-wider text-muted">Equity (Flop a River)</p>
+                  <p className="text-[9px] font-bold uppercase tracking-wider text-muted"><T k="home.odds.equity" /></p>
                   <p className="mt-0.5 text-lg font-bold text-cyan-400">35.0%</p>
                 </div>
               </div>
@@ -417,7 +418,7 @@ export default function HomePage() {
                     {post.category}
                   </span>
                   <span className="text-[10px] font-semibold text-poker/80 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                    Leer artículo →
+                    <T k="utils.readArticle" />
                   </span>
                 </div>
                 <h3 className="mt-3 font-display text-base font-bold text-white group-hover:text-poker transition-colors duration-200">
@@ -433,9 +434,9 @@ export default function HomePage() {
 
         <section>
           <SectionHeader
-            eyebrow="Glosario destacado"
-            title="Términos que verás todo el tiempo"
-            description="Un punto de referencia rápido para entender artículos y análisis de manos."
+            eyebrow={<T k="home.section.glossary" />}
+            title={<T k="home.section.glossaryTitle" />}
+            description={<T k="home.section.glossaryDesc" />}
           />
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {highlightedTerms.map((term) => (
@@ -471,9 +472,9 @@ export default function HomePage() {
 
         <section>
           <SectionHeader
-            eyebrow="Últimos artículos"
-            title="Nuevas guías educativas"
-            description="Contenido publicado recientemente en el blog."
+            eyebrow={<T k="home.section.latest" />}
+            title={<T k="home.section.latestTitle" />}
+            description={<T k="home.section.latestDesc" />}
           />
           <div className="mt-8 grid grid-cols-2 gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-3">
             {latestPosts.map((post) => (

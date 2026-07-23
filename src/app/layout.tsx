@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { LanguageProvider } from "@/i18n";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { siteConfig } from "@/data/site";
@@ -45,9 +46,11 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className="min-h-screen bg-night font-sans antialiased">
-        <Header />
-        {children}
-        <Footer />
+        <LanguageProvider>
+          <Header />
+          {children}
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   );

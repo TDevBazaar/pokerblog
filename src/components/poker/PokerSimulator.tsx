@@ -6,6 +6,7 @@ import { PanelEquidad } from "./PanelEquidad";
 import { SugerenciaAccion } from "./SugerenciaAccion";
 import { simularMontecarlo } from "./lib/montecarlo";
 import { sugerirAccion } from "./lib/sugerirAccion";
+import { useLanguage } from "@/i18n";
 import type { Carta, Posicion, TipoJugador, ResultadoEquidad, Sugerencia } from "./lib/types";
 
 type State = {
@@ -116,7 +117,7 @@ function reducer(state: State, action: Action): State {
 
     case "SELECCIONAR_CARTA_JUGADOR": {
       if (!state.asientoBB) {
-        return { ...state, alerta: "Marca primero la ciega grande (BB) haciendo clic en un asiento de la mesa." };
+        return { ...state, alerta: "simulator.alert.selectBB" };
       }
       if (state.jugador.length >= 2) return state;
       const yaTiene = state.jugador.some(
@@ -129,10 +130,10 @@ function reducer(state: State, action: Action): State {
 
     case "SELECCIONAR_COMUNITARIA": {
       if (!state.asientoBB) {
-        return { ...state, alerta: "Marca primero la ciega grande (BB) haciendo clic en un asiento de la mesa." };
+        return { ...state, alerta: "simulator.alert.selectBB" };
       }
       if (state.jugador.length < 2) {
-        return { ...state, alerta: "Selecciona primero tus 2 cartas de jugador." };
+        return { ...state, alerta: "simulator.alert.selectCards" };
       }
       if (state.comunitarias.length >= 5) return state;
       const yaTiene = state.comunitarias.some(
@@ -178,15 +179,9 @@ function reducer(state: State, action: Action): State {
   }
 }
 
-const FASES_LABEL: Record<string, string> = {
-  preflop: "Preflop — selecciona tus 2 cartas",
-  flop: "Flop — selecciona las 3 cartas comunitarias",
-  turn: "Turn — selecciona 1 carta comunitaria",
-  river: "River — selecciona 1 carta comunitaria",
-};
-
 export function PokerSimulator() {
   const [state, dispatch] = useReducer(reducer, initialState);
+  const { t } = useLanguage();
 
   const manejarCartaJugador = useCallback(
     (carta: Carta) => {
@@ -263,25 +258,25 @@ export function PokerSimulator() {
               type="button"
               onClick={() => dispatch({ type: "QUITAR_OPONENTE" })}
               className="flex h-6 w-6 items-center justify-center rounded bg-white/10 text-xs font-bold text-white transition hover:bg-white/20 md:h-7 md:w-7 md:text-sm"
-              title="Quitar oponente"
+              title={t("simulator.removeOpponent")}
             >
               −
             </button>
             <span className="min-w-[4.5rem] text-center text-xs font-semibold text-white md:min-w-[5rem] md:text-sm">
-              {state.numOponentes + 1} jugadores
+              {t("simulator.players", { n: state.numOponentes + 1 })}
             </span>
             <button
               type="button"
               onClick={() => dispatch({ type: "AGREGAR_OPONENTE" })}
               className="flex h-6 w-6 items-center justify-center rounded bg-white/10 text-xs font-bold text-white transition hover:bg-white/20 md:h-7 md:w-7 md:text-sm"
-              title="Agregar oponente"
+              title={t("simulator.addOpponent")}
             >
               +
             </button>
           </div>
           <div className="hidden h-5 w-px bg-white/10 md:block" />
           <div className="flex items-center gap-1.5 md:gap-2">
-            <span className="text-[10px] text-muted md:text-xs">TÚ:</span>
+            <span className="text-[10px] text-muted md:text-xs">{t("simulator.you")}</span>
             <select
               value={state.tipoJugador}
               onChange={(e) =>
@@ -292,19 +287,19 @@ export function PokerSimulator() {
               }
               className="rounded border border-white/10 bg-white/5 px-1.5 py-0.5 text-[10px] text-white outline-none focus:border-poker md:px-2 md:py-1 md:text-xs"
             >
-              <option value="TAG" className="bg-night text-white">TAG</option>
-              <option value="LAG" className="bg-night text-white">LAG</option>
-              <option value="TightPasivo" className="bg-night text-white">Tight-Pasivo</option>
-              <option value="LoosePasivo" className="bg-night text-white">Loose-Pasivo</option>
+              <option value="TAG" className="bg-night text-white">{t("simulator.typeTAG")}</option>
+              <option value="LAG" className="bg-night text-white">{t("simulator.typeLAG")}</option>
+              <option value="TightPasivo" className="bg-night text-white">{t("simulator.typeTightP")}</option>
+              <option value="LoosePasivo" className="bg-night text-white">{t("simulator.typeLooseP")}</option>
             </select>
           </div>
         </div>
 
         <div className="flex items-center gap-2 md:gap-3">
           <span className="text-[10px] text-muted md:text-xs">
-            BB:
+            {t("simulator.bb")}
             <span className="ml-1 font-semibold text-red-400">
-              {state.asientoBB ? `Asiento ${state.asientoBB}` : "—"}
+              {state.asientoBB ? t("simulator.seat", { n: state.asientoBB }) : "—"}
             </span>
           </span>
           <div className="h-5 w-px bg-white/10 md:h-6" />
@@ -313,27 +308,27 @@ export function PokerSimulator() {
             onClick={() => dispatch({ type: "NUEVA_MANO" })}
             className="rounded-lg bg-poker px-2 py-1 text-[10px] font-bold text-white transition hover:bg-poker/80 md:px-3 md:py-1.5 md:text-xs"
           >
-            Nueva mano
+            {t("simulator.newHand")}
           </button>
           <button
             type="button"
             onClick={() => dispatch({ type: "REINICIAR" })}
             className="rounded-lg bg-white/10 px-2 py-1 text-[10px] font-semibold text-muted transition hover:bg-white/20 md:px-3 md:py-1.5 md:text-xs"
           >
-            Reiniciar
+            {t("simulator.reset")}
           </button>
         </div>
       </div>
 
       {state.alerta && (
         <div className="flex items-center gap-3 rounded-lg border border-amber-500/30 bg-amber-500/10 p-2 md:p-3">
-          <p className="text-xs text-amber-400 md:text-sm">{state.alerta}</p>
+          <p className="text-xs text-amber-400 md:text-sm">{t(state.alerta)}</p>
           <button
             type="button"
             onClick={() => dispatch({ type: "LIMPIAR_ALERTA" })}
             className="ml-auto text-xs text-amber-400/60 hover:text-amber-400"
           >
-            Cerrar
+            {t("simulator.close")}
           </button>
         </div>
       )}

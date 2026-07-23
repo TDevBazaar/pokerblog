@@ -1,9 +1,13 @@
+"use client";
+
 import Image from "next/image";
 import { BarChart3, Download, Play, ShieldCheck, Sparkles } from "lucide-react";
 
 import { ButtonLink } from "@/components/ButtonLink";
+import { useLanguage } from "@/i18n";
 
 export function HeroSection() {
+  const { t } = useLanguage();
   return (
     <section className="relative overflow-hidden border-b border-white/10 bg-site-radial">
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,14,23,0.15),#0a0e17)]" />
@@ -11,25 +15,25 @@ export function HeroSection() {
         <div>
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-poker/30 bg-poker/5 px-3.5 py-1.5 text-xs font-semibold text-poker backdrop-blur-md">
             <Sparkles className="h-3.5 w-3.5 animate-pulse text-poker" aria-hidden="true" />
-            Educación de póker 100% libre de apuestas
+            {t("hero.badge")}
           </div>
           <h1 className="max-w-4xl font-display text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-[3.35rem]">
-            Aprende póker desde cero y{" "}
+            {t("hero.titleStart")}{" "}
             <span className="text-poker">
-              mejora tus decisiones
+              {t("hero.titleHighlight")}
             </span>
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-8 text-muted">
-            Guías, probabilidades, estrategia básica y herramientas para practicar Texas Hold’em sin apostar dinero.
+            {t("hero.description")}
           </p>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-            <ButtonLink href="/aprende-poker">Empezar desde cero</ButtonLink>
+            <ButtonLink href="/aprende-poker">{t("hero.cta.start")}</ButtonLink>
             <ButtonLink
               href="/herramientas/simulador"
               variant="secondary"
               icon={<Play className="h-4 w-4" aria-hidden="true" />}
             >
-              Probar en la web
+              {t("hero.cta.web")}
             </ButtonLink>
           </div>
         </div>
@@ -42,10 +46,10 @@ export function HeroSection() {
               <div>
                 <div className="inline-flex items-center gap-2 rounded-full border border-poker/35 bg-poker/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-poker backdrop-blur">
                   <Sparkles className="h-3 w-3" aria-hidden="true" />
-                  App educativa
+                  {t("hero.appBadge")}
                 </div>
                 <h2 className="mt-3 max-w-sm font-display text-xl font-bold leading-tight text-white sm:text-2xl">
-                  Simula manos y analiza decisiones
+                  {t("hero.appSubtitle")}
                 </h2>
               </div>
               <span className="hidden rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-bold text-ink/80 sm:inline-flex">
@@ -63,17 +67,17 @@ export function HeroSection() {
               </div>
 
               <div className="absolute right-4 top-20 z-20 hidden rounded-xl border border-gold/30 bg-night/95 p-3.5 backdrop-blur-md sm:block transition-all duration-300 hover:border-gold/50">
-                <p className="text-[10px] font-bold uppercase tracking-wider text-gold">Acción sugerida</p>
-                <p className="mt-1 text-lg font-black uppercase text-white tracking-wide">subir (raise)</p>
+                <p className="text-[10px] font-bold uppercase tracking-wider text-gold">{t("hero.suggestionTitle")}</p>
+                <p className="mt-1 text-lg font-black uppercase text-white tracking-wide">{t("hero.suggestionAction")}</p>
               </div>
 
               <div className="absolute bottom-4 left-4 z-20 max-w-48 rounded-xl border border-white/15 bg-night/95 p-3.5 backdrop-blur-md transition-all duration-300 hover:border-white/35">
                 <div className="flex items-center gap-2 text-xs font-bold text-poker">
                   <ShieldCheck className="h-4 w-4" aria-hidden="true" />
-                  Práctica sin riesgo
+                  {t("hero.safetyTitle")}
                 </div>
                 <p className="mt-1.5 text-[10px] leading-relaxed text-ink/85">
-                  Simulación 100% educativa. Sin dinero real.
+                  {t("hero.safetyDescription")}
                 </p>
               </div>
 
@@ -95,7 +99,7 @@ export function HeroSection() {
               <div className="relative z-10 mx-auto h-[25.5rem] max-w-[13.5rem] overflow-hidden rounded-[1.7rem] border border-white/20 bg-carbon p-2 shadow-glow sm:h-[27.5rem] sm:max-w-[14.5rem] lg:h-[25rem]">
                 <Image
                   src="/images/app/proker-simulator-table.jpg"
-                  alt="Pantalla de Proker Simulator simulando una mano de Texas Hold’em"
+                  alt={t("hero.screenshotAlt")}
                   width={720}
                   height={1616}
                   priority

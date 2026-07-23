@@ -13,6 +13,7 @@ import { Container } from "@/components/Container";
 import { FAQSection } from "@/components/FAQSection";
 import { JsonLd } from "@/components/JsonLd";
 import { TableOfContents } from "@/components/TableOfContents";
+import { T } from "@/components/T";
 import { ContentRenderer } from "@/components/content/ContentRenderer";
 import { posts } from "@/data/posts";
 import { siteConfig } from "@/data/site";
@@ -150,15 +151,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               <div className="mt-6 flex flex-wrap gap-4 text-sm text-muted">
                 <span className="inline-flex items-center gap-2">
                   <CalendarDays className="h-4 w-4" aria-hidden="true" />
-                  Publicado: {formatDate(post.publishedAt)}
+                  <T k="blogPost.published" params={{ date: formatDate(post.publishedAt) }} />
                 </span>
                 <span className="inline-flex items-center gap-2">
                   <CalendarDays className="h-4 w-4" aria-hidden="true" />
-                  Actualizado: {formatDate(post.updatedAt)}
+                  <T k="blogPost.updated" params={{ date: formatDate(post.updatedAt) }} />
                 </span>
                 <span className="inline-flex items-center gap-2">
                   <Clock className="h-4 w-4" aria-hidden="true" />
-                  {post.readingTime} min de lectura
+                  <T k="blogPost.readingTime" params={{ n: post.readingTime }} />
                 </span>
               </div>
 
@@ -170,13 +171,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 >
                   <Gamepad2 className="h-12 w-12 text-poker transition group-hover:scale-110 md:h-16 md:w-16" />
                   <p className="text-center font-display text-lg font-bold text-white md:text-2xl">
-                    Simulador de Poker Interactivo
+                    <T k="blogPost.simulatorBanner.title" />
                   </p>
                   <p className="max-w-sm text-center text-xs text-muted md:text-sm">
-                    Pon a prueba tus decisiones con nuestro simulador de manos
+                    <T k="blogPost.simulatorBanner.description" />
                   </p>
                   <span className="mt-1 rounded-full bg-poker px-4 py-1.5 text-xs font-bold text-white transition group-hover:bg-poker/80">
-                    Probar simulador
+                    <T k="blogPost.simulatorBanner.cta" />
                   </span>
                 </Link>
               ) : post.heroImage && (
@@ -230,20 +231,20 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               ) : (
                 <>
                   <p className="text-sm font-semibold text-gold">
-                    Ruta inicial completada
+                    <T k="blogPost.routeCompleted.title" />
                   </p>
                   <h2 className="mt-3 font-display text-2xl font-bold text-white">
-                    Practica lo aprendido con Proker Simulator
+                    <T k="utils.practiceLearned" />
                   </h2>
                   <p className="mt-3 text-sm leading-7 text-muted">
-                    Llegaste al final de la ruta editorial inicial. Ahora puedes practicar decisiones con simulaciones educativas.
+                    <T k="blogPost.routeCompleted.description" />
                   </p>
                   <ButtonLink
                     className="mt-6"
                     href="/app/proker-simulator"
                     icon={<ArrowRight className="h-4 w-4" aria-hidden="true" />}
                   >
-                    Ir a Proker Simulator
+                    <T k="blogPost.routeCompleted.cta" />
                   </ButtonLink>
                 </>
               )}
@@ -260,17 +261,17 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
             <section className="mt-12 rounded-lg border border-poker/30 bg-poker/10 p-6">
               <h2 className="font-display text-2xl font-bold text-white">
-                Practica esta guía con Proker Simulator
+                <T k="blogPost.practiceCta.title" />
               </h2>
               <p className="mt-3 text-sm leading-7 text-muted">
-                Convierte la teoría en ejercicios: simula manos, revisa decisiones y practica sin apostar dinero.
+                <T k="blogPost.practiceCta.description" />
               </p>
               <ButtonLink
                 className="mt-5"
                 href="/app/proker-simulator"
                 icon={<ArrowRight className="h-4 w-4" aria-hidden="true" />}
               >
-                Ver Proker Simulator
+                <T k="blogPost.practiceCta.cta" />
               </ButtonLink>
             </section>
           </div>
@@ -285,7 +286,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <Container className="pb-16">
         <section>
           <h2 className="font-display text-2xl font-bold text-white">
-            Artículos relacionados
+            <T k="blogPost.related" />
           </h2>
           <div className="mt-6 grid grid-cols-2 gap-4 md:gap-6 md:grid-cols-3">
             {relatedPosts.map((related) => (

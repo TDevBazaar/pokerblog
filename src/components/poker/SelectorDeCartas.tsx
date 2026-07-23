@@ -1,6 +1,7 @@
 "use client";
 
 import { RANGO_A_LETRA, PALO_A_SIMBOLO, PALO_TO_COLOR } from "./lib/mazo";
+import { useLanguage } from "@/i18n";
 import type { Carta, Palo, Rango } from "./lib/types";
 
 type Props = {
@@ -21,16 +22,17 @@ export function SelectorDeCartas({
   maxSeleccion,
   onSeleccionar,
 }: Props) {
+  const { t } = useLanguage();
   const completo = seleccionadas.length >= maxSeleccion;
 
   return (
     <div className="w-full">
       <div className="mb-2 flex items-center justify-between">
         <p className="text-xs text-muted">
-          Cartas seleccionadas: {seleccionadas.length}/{maxSeleccion}
+          {t("simulator.selectedCards", { n: seleccionadas.length, m: maxSeleccion })}
         </p>
         {completo && (
-          <p className="text-xs text-poker">Completo</p>
+          <p className="text-xs text-poker">{t("simulator.complete")}</p>
         )}
       </div>
       <div className="grid grid-cols-13 gap-[3px]">

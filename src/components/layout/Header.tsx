@@ -8,10 +8,12 @@ import { Download, Menu, X } from "lucide-react";
 
 import { siteConfig } from "@/data/site";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/i18n";
 
 export function Header() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const { t, locale, setLocale } = useLanguage();
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-night/90 backdrop-blur-xl">
@@ -27,7 +29,7 @@ export function Header() {
           <span className="font-display text-lg font-bold text-white">Proker Simulator</span>
         </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Navegacion principal">
+        <nav className="hidden items-center gap-1 lg:flex" aria-label={t("header.aria.nav")}>
           {siteConfig.navLinks.map((link) => {
             const active = pathname === link.href;
             return (
@@ -46,19 +48,27 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
+          <button
+            type="button"
+            onClick={() => setLocale(locale === "en" ? "es" : "en")}
+            className="focus-ring inline-flex min-h-11 items-center gap-1.5 rounded border border-white/10 px-3 py-2 text-xs font-bold uppercase tracking-wider text-muted transition hover:border-poker/50 hover:text-poker"
+            aria-label="Toggle language"
+          >
+            {locale === "en" ? "ES" : "EN"}
+          </button>
           <Link
             className="focus-ring inline-flex min-h-11 items-center gap-2 rounded bg-action px-4 py-2 text-sm font-semibold text-night transition hover:bg-poker"
             href="/app/proker-simulator"
           >
             <Download className="h-4 w-4" aria-hidden="true" />
-            Descargar App
+            {t("header.downloadApp")}
           </Link>
         </div>
 
         <button
           className="focus-ring inline-flex h-11 w-11 items-center justify-center rounded border border-white/10 text-white lg:hidden"
           type="button"
-          aria-label={open ? "Cerrar menu" : "Abrir menu"}
+          aria-label={open ? t("header.aria.closeMenu") : t("header.aria.openMenu")}
           aria-expanded={open}
           onClick={() => setOpen((value) => !value)}
         >
@@ -68,7 +78,7 @@ export function Header() {
 
       {open && (
         <div className="border-t border-white/10 bg-night/95 lg:hidden">
-          <nav className="section-shell grid gap-2 py-5" aria-label="Menu movil">
+          <nav className="section-shell grid gap-2 py-5" aria-label={t("header.aria.mobileNav")}>
             {siteConfig.navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -85,8 +95,15 @@ export function Header() {
               onClick={() => setOpen(false)}
             >
               <Download className="h-4 w-4" aria-hidden="true" />
-              Descargar App
+              {t("header.downloadApp")}
             </Link>
+            <button
+              type="button"
+              onClick={() => { setLocale(locale === "en" ? "es" : "en"); setOpen(false); }}
+              className="focus-ring mt-2 inline-flex min-h-11 items-center justify-center rounded border border-white/10 px-4 py-3 text-sm font-bold uppercase tracking-wider text-muted transition hover:border-poker/50 hover:text-poker"
+            >
+              {locale === "en" ? "ES" : "EN"}
+            </button>
           </nav>
         </div>
       )}
