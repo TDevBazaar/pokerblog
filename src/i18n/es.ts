@@ -5,6 +5,7 @@ export const es = {
   "common.seeMore": "Ver →",
   "common.learnMore": "Usar",
   "common.startOver": "Empezar desde cero",
+  "common.use": "Usar",
 
   // ── Header ──
   "header.nav.aprende": "Aprende Póker",
@@ -56,7 +57,7 @@ export const es = {
 
   // ── Category Card ──
   "categoryCard.topics": "{n} temas clave",
-  "categoryCard.terms": "términos",
+  "categoryCard.terms": "{n} términos",
   "categoryCard.topicsLabel": "temas",
   "categoryCard.startLearning": "Comenzar a aprender",
   "categoryCard.recommendedRoute": "Ruta recomendada",

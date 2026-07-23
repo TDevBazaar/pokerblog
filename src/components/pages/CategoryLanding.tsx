@@ -4,57 +4,55 @@ import { ArrowRight, Calculator, Percent, Smartphone, TableProperties, Target, W
 import { ArticleCard } from "@/components/ArticleCard";
 import { AppPromo } from "@/components/AppPromo";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { JsonLd } from "@/components/JsonLd";
 import { VisitedBadge } from "@/components/VisitedBadge";
 import { Container } from "@/components/Container";
 import { HandRankingTable } from "@/components/HandRankingTable";
 import { SectionHeader } from "@/components/SectionHeader";
-import { quickAnswers } from "@/data/categories";
 import { posts } from "@/data/posts";
 import { getCategoryBySlug, getPostsByCategory } from "@/lib/utils";
+import { T } from "@/components/T";
 
 type CategoryLandingProps = {
   slug: string;
   showHandRanking?: boolean;
-  showQuickAnswers?: boolean;
   showTools?: boolean;
   hideArticles?: boolean;
 };
 
 const toolBlocks = [
   {
-    title: "Calculadora de odds",
-    description: "Recurso para entender porcentajes, outs y equity de forma visual.",
+    titleKey: "tools.calcOdds",
+    descKey: "tools.calcOddsDesc",
     icon: Calculator,
     href: "/blog/que-es-y-como-usar-una-calculadora-de-odds",
   },
   {
-    title: "Simulador de manos",
-    description: "Practica escenarios de Texas Hold'em sin dinero real.",
+    titleKey: "tools.simManos",
+    descKey: "tools.simManosDesc",
     icon: Target,
     href: "/blog/apps-para-practicar-y-simular-manos-de-poker",
   },
   {
-    title: "Tabla de manos",
-    description: "Referencia rápida para revisar el ranking de combinaciones.",
+    titleKey: "tools.tablaManos",
+    descKey: "tools.tablaManosDesc",
     icon: TableProperties,
     href: "/blog/tabla-de-manos-de-poker",
   },
   {
-    title: "Tabla de outs",
-    description: "Aprende cuántas cartas pueden completar cada proyecto común.",
+    titleKey: "tools.tablaOuts",
+    descKey: "tools.tablaOutsDesc",
     icon: Wrench,
     href: "/blog/tabla-de-outs-de-poker",
   },
   {
-    title: "App Proker Simulator",
-    description: "Analiza decisiones, manos iniciales y situaciones de práctica.",
+    titleKey: "tools.appProker",
+    descKey: "tools.appProkerDesc",
     icon: Smartphone,
     href: "/blog/poker-advisor-como-mejorar-decisiones",
   },
   {
-    title: "Calculadora de pot odds",
-    description: "Compara el tamaño del bote con el coste de pagar para saber si la jugada merece la pena.",
+    titleKey: "tools.calcPotOdds",
+    descKey: "tools.calcPotOddsDesc",
     icon: Percent,
     href: "/blog/calculadora-de-pot-odds",
   },
@@ -63,7 +61,6 @@ const toolBlocks = [
 export function CategoryLanding({
   slug,
   showHandRanking,
-  showQuickAnswers,
   showTools,
   hideArticles,
 }: CategoryLandingProps) {
@@ -74,29 +71,13 @@ export function CategoryLanding({
     notFound();
   }
 
-  const faqJsonLd = showQuickAnswers
-    ? {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        mainEntity: quickAnswers.map((item) => ({
-          "@type": "Question",
-          name: item.question,
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: item.answer,
-          },
-        })),
-      }
-    : null;
-
   return (
     <main>
-      {faqJsonLd && <JsonLd data={faqJsonLd} />}
       <section className="border-b border-white/10 bg-site-radial py-12">
         <Container>
           <Breadcrumbs items={[{ label: category.title }]} />
           <div className="mt-8 max-w-4xl">
-            <p className="text-sm font-semibold text-poker">Categoría educativa</p>
+            <p className="text-sm font-semibold text-poker"><T k="categoryLanding.eyebrow" /></p>
             <h1 className="mt-3 font-display text-4xl font-bold text-white sm:text-5xl">
               {category.title}
             </h1>
@@ -108,28 +89,10 @@ export function CategoryLanding({
       <Container className="grid gap-14 py-14">
         {showHandRanking && <HandRankingTable />}
 
-        {showQuickAnswers && (
-          <section>
-            <SectionHeader
-              eyebrow="Respuestas rápidas"
-              title="Qué gana a qué"
-              description="Comparaciones comunes para resolver dudas de ranking y empates."
-            />
-            <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {quickAnswers.map((item) => (
-                <article key={item.question} className="surface-card p-5">
-                  <h2 className="text-base font-semibold text-white">{item.question}</h2>
-                  <p className="mt-3 text-sm leading-6 text-poker">{item.answer}</p>
-                </article>
-              ))}
-            </div>
-          </section>
-        )}
-
         <section>
           <SectionHeader
-            eyebrow="Temas"
-            title={`Guías y conceptos de ${category.title}`}
+            eyebrow={<T k="categoryLanding.topics.eyebrow" />}
+            title={<T k="categoryLanding.topics.title" params={{ title: category.title }} />}
           />
           <div className="mt-6 flex flex-wrap gap-x-4 gap-y-3">
             {category.topics.map((topic) => {
@@ -162,9 +125,9 @@ export function CategoryLanding({
         {showTools && (
           <section>
             <SectionHeader
-              eyebrow="Recursos"
-              title="Herramientas para practicar sin apostar dinero"
-              description="Tarjetas interactivas que enlazan a guías explicativas de cada herramienta."
+              eyebrow={<T k="categoryLanding.tools.eyebrow" />}
+              title={<T k="categoryLanding.tools.title" />}
+              description={<T k="categoryLanding.tools.description" />}
             />
             <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {toolBlocks.map((tool) => {
@@ -172,17 +135,17 @@ export function CategoryLanding({
                 return (
                   
                   <Link
-                    key={tool.title}
+                    key={tool.titleKey}
                     href={tool.href}
                     className="surface-card block p-5 transition hover:scale-[1.02] hover:shadow-lg"
                   >
                     <span className="flex h-11 w-11 items-center justify-center rounded bg-poker/10 text-poker">
                       <Icon className="h-5 w-5" aria-hidden="true" />
                     </span>
-                    <h2 className="mt-4 text-lg font-semibold text-white">{tool.title}</h2>
-                    <p className="mt-3 text-sm leading-6 text-muted">{tool.description}</p>
+                    <h2 className="mt-4 text-lg font-semibold text-white"><T k={tool.titleKey} /></h2>
+                    <p className="mt-3 text-sm leading-6 text-muted"><T k={tool.descKey} /></p>
           <span className="mt-5 inline-flex items-center gap-1.5 text-xs font-bold text-poker">
-            Usar
+            <T k="common.use" />
             <ArrowRight className="h-3.5 w-3.5 transition group-hover:translate-x-1" aria-hidden="true" />
           </span>
                   </Link>
@@ -194,9 +157,9 @@ export function CategoryLanding({
   {!hideArticles && (
           <section>
             <SectionHeader
-              eyebrow="Artículos"
-              title="Guías disponibles"
-              description="Contenido inicial cargado desde datos locales y listo para crecer."
+              eyebrow={<T k="categoryLanding.articles.eyebrow" />}
+              title={<T k="categoryLanding.articles.title" />}
+              description={<T k="categoryLanding.articles.description" />}
             />
             <div className="mt-6 grid grid-cols-2 gap-4 md:gap-6 md:grid-cols-2 lg:grid-cols-3">
               {categoryPosts.map((post) => (

@@ -11,6 +11,7 @@ import {
 
 import type { Category } from "@/types/content";
 import { cn } from "@/lib/utils";
+import { T } from "@/components/T";
 
 const iconMap = {
   book: BookOpen,
@@ -73,34 +74,34 @@ const categoryImages: Record<string, string> = {
 
 // Sub-elements for rich Bento Grid presentation
 const aprendeSteps = [
-  { step: "1", title: "Reglas Básicas", desc: "Manos y ciegas" },
-  { step: "2", title: "Rondas", desc: "Preflop, Flop, Turn..." },
-  { step: "3", title: "Acciones", desc: "Bet, Check, Raise..." },
-  { step: "4", title: "Práctica", desc: "Decisiones gratis" },
+  { step: "1", titleKey: "categoryCard.reglas" as const, descKey: "categoryCard.manos" as const },
+  { step: "2", titleKey: "categoryCard.rondas" as const, descKey: "categoryCard.fases" as const },
+  { step: "3", titleKey: "categoryCard.acciones" as const, descKey: "categoryCard.betCheckRaise" as const },
+  { step: "4", titleKey: "categoryCard.practica" as const, descKey: "categoryCard.decisiones" as const },
 ];
 
 const estrategiaHighlights = [
-  "Tight-Aggressive",
-  "Juego Posicional",
-  "Value Betting",
-  "Lectura de Apuestas",
-];
+  "categoryCard.tightAggressive",
+  "categoryCard.juegoPosicional",
+  "categoryCard.valueBetting",
+  "categoryCard.lecturaApuestas",
+] as const;
 
 const herramientasHighlights = [
-  "Proker Simulator",
-  "Calculadora Odds",
-  "Simulador de Manos",
-  "Rangos Iniciales",
-];
+  "categoryCard.herramientasProker",
+  "categoryCard.herramientasOdds",
+  "categoryCard.herramientasSimulador",
+  "categoryCard.herramientasRangos",
+] as const;
 
 const glosarioHighlights = [
-  "All-in",
-  "Bluff (Farol)",
-  "Bad Beat",
-  "Tilt",
-  "Nuts",
-  "Set / Trips",
-];
+  "categoryCard.glosarioAllIn",
+  "categoryCard.glosarioBluff",
+  "categoryCard.glosarioBadBeat",
+  "categoryCard.glosarioTilt",
+  "categoryCard.glosarioNuts",
+  "categoryCard.glosarioSet",
+] as const;
 
 export function CategoryCard({ category, className }: CategoryCardProps) {
   const Icon = iconMap[category.icon];
@@ -123,7 +124,7 @@ export function CategoryCard({ category, className }: CategoryCardProps) {
       {imageSrc && (
         <Image
           src={imageSrc}
-          alt={`Vista de ${category.title}`}
+          alt={category.title}
           fill
           className="object-cover opacity-60 transition duration-500 group-hover:scale-105 group-hover:opacity-75"
           sizes={isLarge || isWide ? "(min-width: 768px) 66vw, 100vw" : "(min-width: 768px) 33vw, 100vw"}
@@ -149,7 +150,7 @@ export function CategoryCard({ category, className }: CategoryCardProps) {
           <div className="flex flex-col justify-between h-full">
             <div>
               <span className={`mb-3 inline-block text-xs font-bold uppercase tracking-wider ${art.accent}`}>
-                {category.topics.length} temas clave
+                <T k="categoryCard.topics" params={{ n: category.topics.length }} />
               </span>
               <h3 className="font-display text-2xl font-extrabold leading-tight text-white sm:text-3xl">
                 {category.title}
@@ -159,19 +160,19 @@ export function CategoryCard({ category, className }: CategoryCardProps) {
               </p>
             </div>
             <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-poker md:mt-auto">
-              Comenzar a aprender
+              <T k="categoryCard.startLearning" />
               <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" aria-hidden="true" />
             </span>
           </div>
 
           <div className="hidden md:flex flex-col justify-center gap-3 border-l border-white/5 pl-6">
-            <p className="text-[10px] font-bold uppercase tracking-widest text-muted/75 mb-1">Ruta recomendada</p>
+            <p className="text-[10px] font-bold uppercase tracking-widest text-muted/75 mb-1"><T k="categoryCard.recommendedRoute" /></p>
             <div className="grid grid-cols-2 gap-3">
               {aprendeSteps.map((s) => (
                 <div key={s.step} className="rounded-lg border border-white/5 bg-night/60 p-3 backdrop-blur-sm transition duration-300 hover:border-poker/35 hover:bg-night/80">
-                  <span className={`text-[10px] font-bold ${art.accent}`}>Paso {s.step}</span>
-                  <h4 className="text-xs font-semibold text-white mt-0.5">{s.title}</h4>
-                  <p className="text-[10px] text-muted mt-0.5 leading-normal">{s.desc}</p>
+                  <span className={`text-[10px] font-bold ${art.accent}`}><T k="categoryCard.step" params={{ n: s.step }} /></span>
+                  <h4 className="text-xs font-semibold text-white mt-0.5"><T k={s.titleKey} /></h4>
+                  <p className="text-[10px] text-muted mt-0.5 leading-normal"><T k={s.descKey} /></p>
                 </div>
               ))}
             </div>
@@ -183,7 +184,7 @@ export function CategoryCard({ category, className }: CategoryCardProps) {
           <div className="flex flex-col justify-between h-full">
             <div>
               <span className={`mb-2 inline-block text-xs font-bold uppercase tracking-wider ${art.accent}`}>
-                {category.topics.length} temas
+                <T k="categoryCard.topics" params={{ n: category.topics.length }} />
               </span>
               <h3 className="font-display text-xl font-bold leading-tight text-white sm:text-2xl">
                 {category.title}
@@ -193,20 +194,20 @@ export function CategoryCard({ category, className }: CategoryCardProps) {
               </p>
             </div>
             <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-poker md:mt-auto">
-              Ver guías y tácticas
+              <T k="categoryCard.cta.guias" />
               <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" aria-hidden="true" />
             </span>
           </div>
 
           <div className="hidden md:flex flex-col justify-center border-l border-white/5 pl-6">
-            <p className="text-[10px] font-bold uppercase tracking-widest text-muted/75 mb-3">Tácticas clave</p>
+            <p className="text-[10px] font-bold uppercase tracking-widest text-muted/75 mb-3"><T k="categoryCard.tacticas" /></p>
             <div className="flex flex-wrap gap-2">
               {(category.slug === "estrategia" ? estrategiaHighlights : herramientasHighlights).map((h) => (
                 <span
                   key={h}
                   className="rounded bg-night/50 border border-white/5 px-2.5 py-1 text-xs font-semibold text-ink/90 transition hover:border-poker/30 hover:bg-night/80"
                 >
-                  {h}
+                  <T k={h} />
                 </span>
               ))}
             </div>
@@ -217,7 +218,7 @@ export function CategoryCard({ category, className }: CategoryCardProps) {
         <div className="relative z-10 flex h-full w-full flex-col p-6 justify-between">
           <div>
             <span className={`mb-2.5 inline-block text-xs font-bold uppercase tracking-wider ${art.accent}`}>
-              {category.topics.length} términos
+              <T k="categoryCard.terms" params={{ n: category.topics.length }} />
             </span>
             <h3 className="font-display text-xl font-bold leading-tight text-white sm:text-2xl">
               {category.title}
@@ -228,21 +229,21 @@ export function CategoryCard({ category, className }: CategoryCardProps) {
           </div>
 
           <div className="hidden md:flex flex-col gap-2 my-4">
-            <p className="text-[10px] font-bold uppercase tracking-widest text-muted/75 mb-1">Palabras clave</p>
+            <p className="text-[10px] font-bold uppercase tracking-widest text-muted/75 mb-1"><T k="categoryCard.palabrasClave" /></p>
             <div className="grid grid-cols-2 gap-2">
               {glosarioHighlights.map((term) => (
                 <span
                   key={term}
                   className="rounded border border-white/5 bg-night/60 p-2 text-center text-xs font-semibold text-ink/95 transition duration-300 hover:border-gold/30 hover:bg-night/80"
                 >
-                  {term}
+                  <T k={term} />
                 </span>
               ))}
             </div>
           </div>
 
           <span className="inline-flex items-center gap-2 text-sm font-semibold text-poker mt-auto">
-            Explorar diccionario
+            <T k="categoryCard.explorarDiccionario" />
             <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" aria-hidden="true" />
           </span>
         </div>
@@ -251,7 +252,7 @@ export function CategoryCard({ category, className }: CategoryCardProps) {
         <div className="relative z-10 flex h-full w-full flex-col p-6 justify-between">
           <div>
             <span className={`mb-2.5 inline-block text-xs font-bold uppercase tracking-wider ${art.accent}`}>
-              {category.topics.length} temas
+              <T k="categoryCard.topics" params={{ n: category.topics.length }} />
             </span>
             <h3 className="font-display text-xl font-bold leading-tight text-white">
               {category.title}
@@ -261,7 +262,7 @@ export function CategoryCard({ category, className }: CategoryCardProps) {
             </p>
           </div>
           <span className="inline-flex items-center gap-2 text-sm font-semibold text-poker mt-auto">
-            Estudiar guía
+            <T k="categoryCard.estudiarGuia" />
             <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" aria-hidden="true" />
           </span>
         </div>

@@ -5,6 +5,7 @@ export const en: typeof import("./es").es = {
   "common.seeMore": "View →",
   "common.learnMore": "Use",
   "common.startOver": "Start from scratch",
+  "common.use": "Use",
 
   // ── Header ──
   "header.nav.aprende": "Learn Poker",
@@ -56,7 +57,7 @@ export const en: typeof import("./es").es = {
 
   // ── Category Card ──
   "categoryCard.topics": "{n} key topics",
-  "categoryCard.terms": "terms",
+  "categoryCard.terms": "{n} terms",
   "categoryCard.topicsLabel": "topics",
   "categoryCard.startLearning": "Start learning",
   "categoryCard.recommendedRoute": "Recommended route",
